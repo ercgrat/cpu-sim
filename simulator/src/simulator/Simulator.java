@@ -18,10 +18,25 @@ public class Simulator {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        emulator Emulator=new emulator();
-        ArrayList<String> instructions=Emulator.readInstructions("prog.dat");
-        Map<Integer,Float> memory=Emulator.readData("prog.dat");
-        System.out.println(String.valueOf(memory.get(200)));
-        
-    }
+		if(args.length < 1) {
+			System.out.println("Too few arguments. Run with input file on command line:\n\njava simulator.Simulator <input_file>");
+			return;
+		}
+		String filename = args[0];
+		emulator Emulator = new emulator();
+		ArrayList<String> instructions = Emulator.readInstructions(filename);
+		Map<Integer,Float> memory = Emulator.readData(filename);     
+		
+		// Just demonstrating the Instruction class
+		for(String inst : instructions) {
+			System.out.println(Instruction.unit(inst));
+			System.out.println(Instruction.dest(inst));
+			System.out.println(Instruction.isFloatType(inst));
+			System.out.println(Instruction.srcOffset(inst));
+			System.out.println(Instruction.src(inst));
+			System.out.println(Instruction.target(inst));
+			System.out.println(Instruction.isImmediateType(inst));
+			System.out.println(Instruction.immediate(inst));
+		}
+	}
 }
