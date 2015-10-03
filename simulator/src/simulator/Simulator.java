@@ -29,7 +29,7 @@ public class Simulator {
 		
 		// Just demonstrating the Instruction class
 		for(String inst : instructions) {
-			Instruction test = new Instruction(inst);
+			Instruction test = new Instruction(inst, 0);
 			System.out.println(test);
 		}
 	}

@@ -28,12 +28,13 @@ public class Instruction {
 		}
 	}
 	
-	public Instruction(String instruction) {
+	public Instruction(String instruction, int address) {
 		this.op = op(instruction);
 		this.unit = unit(instruction);
 		this.dest = dest(instruction);
 		this.src = src(instruction);
 		this.target = target(instruction);
+		this.address = address;
 	}
     
 	// Returns the operation string
@@ -156,6 +157,6 @@ public class Instruction {
 	}
 	
 	public String toString() {
-		return "{ op: " + op + ", unit: " + unit + ", dest: " + dest + ", src: " + src + ", target: " + target + " }";
+		return "{ op: " + op + ", unit: " + unit + ", dest: " + dest + ", src: " + src + ", target: " + target + ", address: " + address + "}";
 	}
 }

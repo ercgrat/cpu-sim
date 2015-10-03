@@ -19,7 +19,8 @@ public class DecodeUnit {
 		int numInst = Math.min(NI - issueQueue.size(), ND);
 		ArrayList<String> dequeuedInstructions = fetchUnit.dequeue(numInst);
 		for(String instString : dequeuedInstructions) {
-			Instruction inst = new Instruction(instString);
+			String[] tokens = instString.split(";");
+			Instruction inst = new Instruction(tokens[0], Integer.parseInt(tokens[1]));
 			renameRegisters(inst);
 			issueQueue.add(inst);
 		}
