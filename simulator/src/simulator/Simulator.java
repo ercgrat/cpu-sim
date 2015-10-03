@@ -29,14 +29,8 @@ public class Simulator {
 		
 		// Just demonstrating the Instruction class
 		for(String inst : instructions) {
-			System.out.println(Instruction.unit(inst));
-			System.out.println(Instruction.dest(inst));
-			System.out.println(Instruction.isFloatType(inst));
-			System.out.println(Instruction.srcOffset(inst));
-			System.out.println(Instruction.src(inst));
-			System.out.println(Instruction.target(inst));
-			System.out.println(Instruction.isImmediateType(inst));
-			System.out.println(Instruction.immediate(inst));
+			Instruction test = new Instruction(inst);
+			System.out.println(test);
 		}
 	}
 }
