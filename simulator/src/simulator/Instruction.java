@@ -1,20 +1,5 @@
 package simulator;
 
-/** List of methods:
-***
-*** op(String inst)
-*** unit(String inst)
-*** isFloatType(String inst)
-*** isImmediateType(String inst)
-*** dest(String inst)
-*** src(String inst)
-*** srcOffset(String inst)
-*** target(String inst)
-*** immediate(String inst)
-*** isIntChar(char c)
-***
-**/
-
 public class Instruction {
 	
 	private static final String delimiters = ", | |,"; // Split on comma space OR space or comma (order matters here; the largest delimiter needs to be first)

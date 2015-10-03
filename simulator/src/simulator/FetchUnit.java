@@ -1,9 +1,11 @@
+package simulator;
+
 import java.util.*;
 
 public class FetchUnit {
 
 	private final int baseAddr = 1000;
-	private int PC, NF;
+	private int PC, NF, NQ;
 	private ArrayList<String> cacheLine;
 	private ArrayList<String> instructionQueue;
 	private ArrayList<String> instructionMemory;
@@ -49,8 +51,9 @@ public class FetchUnit {
 		}
 	}
 	
-	public FetchUnit(int NF, ArrayList<String> instructionMemory) {
+	public FetchUnit(int NF, int NQ, ArrayList<String> instructionMemory) {
 		this.NF = NF;
+		this.NQ = NQ;
 		this.instructionMemory = instructionMemory;
 		PC = baseAddr;
 		cacheLine = new ArrayList<String>();
@@ -74,7 +77,7 @@ public class FetchUnit {
 			cacheLine.add(instructionMemory.get(instIndex + 2));
 			cacheLine.add(instructionMemory.get(instIndex + 3));
 		}
-		int numInsts = Math.min(NF - instructionQueue.size(), cacheLinePotential);
+		int numInsts = Math.min(NQ - instructionQueue.size(), cacheLinePotential);
 		
 		// Move instructions from cache line to queue
 		for(int i = 0; i < numInsts; i++) {
@@ -93,7 +96,7 @@ public class FetchUnit {
 				cacheLine.add(instructionMemory.get(PCIndex + 3));
 				break;
 			}
-			instructionQueue.add(inst);
+			instructionQueue.add(inst + ";" + PCIndex);
 		}
 	}
 	
