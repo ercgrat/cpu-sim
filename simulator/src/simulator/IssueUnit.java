@@ -28,15 +28,10 @@ public class IssueUnit {
                 break;
             else{
                 int stNum = reservationStations.isFree(nextInst.unit);
-                if(stNum!=0){
-                    int slotNum = reorderBuffer.isSlotFree();
-                    if(slotNum != 0){
-                        reservationStations.reserveStation(stNum, nextInst);
-                        reorderBuffer.reserveSlot(slotNum, nextInst);
-                        decodeUnit.dequeue();
-                    }
-                    else
-                        break;
+                if(stNum!=0 && reorderBuffer.hasSlot()){
+                    reservationStations.reserveStation(stNum, nextInst);
+                    int robSlot = reorderBuffer.reserveSlot(nextInst, stNum);
+                    decodeUnit.dequeue();
                 }
                 else
                     break;
