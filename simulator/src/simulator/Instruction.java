@@ -54,9 +54,11 @@ public class Instruction {
 				break;
 			case "LD":
 			case "L.D":
+                unit = "Load";
+                break;
 			case "SD":
 			case "S.D":
-				unit = "Load/Store";
+				unit = "Store";
 				break;
 			case "ADD.D":
 			case "SUB.D":

@@ -27,12 +27,6 @@ public class IssueUnit {
             if(nextInst==null)
                 break;
             else{
-                if(nextInst.unit=="Load/Store"){
-                    if(nextInst.op=="LD" || nextInst.op=="L.D")
-                        nextInst.unit = "Load";
-                    else
-                        nextInst.unit = "Store";
-                }
                 int stNum = reservationStations.isFree(nextInst.unit);
                 if(stNum!=0){
                     int slotNum = reorderBuffer.isSlotFree();
