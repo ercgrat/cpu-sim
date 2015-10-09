@@ -9,29 +9,33 @@ public class ReorderBuffer {
     
     private class ROBEntry {
         Instruction inst;
-        int resStationNum;
         boolean hasValue;
         Integer intValue;
         Double floatValue;
         
-        public ROBEntry(Instruction inst, int resStationNum) {
+        public ROBEntry(Instruction inst) {
             this.inst = inst;
-            this.resStationNum = resStationNum;
             hasValue = false;
         }
     }
     
     private int NR, NC, head;
     private ROBEntry[] ROB;
+    private RegisterFile<Integer> intRegisters;
+    private RegisterFile<Double> floatRegisters;
+    private ReservationStations resStations;
     
-    public ReorderBuffer(int NR, int NC){
+    public ReorderBuffer(int NR, int NC,  RegisterFile<Integer> intRegisters,  RegisterFile<Double> floatRegisters, ReservationStations resStations){
         this.NR = NR;
         this.NC = NC;
+        this.intRegisters = intRegisters;
+        this.floatRegisters = floatRegisters;
+        this.resStations = resStations;
         head = 0;
         ROB = new ROBEntry[NR];
     }
     
-    public void cycle() {
+    public void cycle(int numCommitted) {
         int current = head;
         ROBEntry entry = ROB[current];
         
@@ -41,18 +45,25 @@ public class ReorderBuffer {
             entry = ROB[current];
         }
         
-        // Commit in order from oldest instructions if values are available
-        int numCommitted = 0;
+        // Commit in order from oldest instructions, if values are ready, while bandwidth available on the CDB
         while(entry.hasValue && numCommitted < NC) {
-            /***
-            *** Commit the value available in entry
-            ***/
+            commit(current, entry);
             ROB[current] = null;
             numCommitted++;
             
             // Go to next oldest entry
             current = next(current);
             entry = ROB[current];
+        }
+    }
+    
+    private void commit(int robSlot, ROBEntry entry) {
+        if(entry.intValue != null) {
+            intRegisters.write(entry.inst.dest.registerIndex, entry.intValue);
+            resStations.writeback(robSlot, entry.intValue);
+        } else {
+            floatRegisters.write(entry.inst.dest.registerIndex, entry.floatValue);
+            resStations.writeback(robSlot, entry.floatValue);
         }
     }
     
@@ -65,11 +76,25 @@ public class ReorderBuffer {
     }
     
     /*To reserve a slot in the reorder buffer with the given slot number*/
-    public int reserveSlot(Instruction instruction, int resStationNum) {
+    public int reserveSlot(Instruction instruction) {
         int index = head;
         head = next();
-        ROB[index] = new ROBEntry(instruction, resStationNum);
+        ROB[index] = new ROBEntry(instruction);
         return index;
+    }
+    
+    public void write(int index, Integer val) {
+        if(index >= 0 && index < NR) {
+            ROB[index].hasValue = true;
+            ROB[index].intValue = val;
+        }
+    }
+    
+    public void write(int index, Double val) {
+        if(index >= 0 && index < NR) {
+            ROB[index].hasValue = true;
+            ROB[index].floatValue = val;
+        }
     }
     
     private int next() {

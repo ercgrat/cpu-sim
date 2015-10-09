@@ -30,7 +30,7 @@ public class IssueUnit {
                 int stNum = reservationStations.isFree(nextInst.unit);
                 if(stNum!=0 && reorderBuffer.hasSlot()){
                     reservationStations.reserveStation(stNum, nextInst);
-                    int robSlot = reorderBuffer.reserveSlot(nextInst, stNum);
+                    int robSlot = reorderBuffer.reserveSlot(nextInst);
                     decodeUnit.dequeue();
                 }
                 else

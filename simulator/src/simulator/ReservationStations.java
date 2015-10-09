@@ -142,8 +142,16 @@ public class ReservationStations {
         return 0;
     }
     
-    public void finishedExecution(int StNum){
-        Stations[StNum].finishedExec = true;
+    public void finishedExecution(int stNum){
+        Stations[stNum].finishedExec = true;
+    }
+    
+    public void writeback(int robSlot, Integer val) {
+        
+    }
+    
+    public void writeback(int robSlot, Double val) {
+        
     }
     
     public void reserveStation(int i, Instruction instruction){
