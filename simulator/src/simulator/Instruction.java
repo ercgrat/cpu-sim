@@ -9,22 +9,29 @@ public class Instruction {
 	Operand dest, src, target;
 	
 	public enum RegisterType {
-		INT, FLOAT, ROB
+		INT, FLOAT
 	}
 	
 	public class Operand {
-		Integer value;
+		Integer intValue;
+        Double floatValue;
 		Integer registerIndex;
 		RegisterType registerType;
 		
-		public Operand(Integer value, Integer registerIndex, RegisterType registerType) {
-			this.value = value;
-			this.registerIndex = registerIndex;
-			this.registerType = registerType;
+        public Operand() {
+        }
+        
+		public Operand(Integer value) {
+			this.intValue = value;
 		}
+
+        public Operand(Integer registerIndex, RegisterType registerType) {
+            this.registerIndex = registerIndex;
+			this.registerType = registerType;
+        }
 		
 		public String toString() {
-			return "{ Value: " + value + ", RegIndex: " + registerIndex + ", RegType: " + registerType + " }";
+			return "{ intValue: " + intValue + ", floatValue: " + floatValue + ", RegIndex: " + registerIndex + ", RegType: " + registerType + " }";
 		}
 	}
 	
@@ -87,7 +94,7 @@ public class Instruction {
 		if(destTypeChar == 'F') {
 			destType = RegisterType.FLOAT;
 		}
-		return new Operand(null, destReg, destType);
+		return new Operand(destReg, destType);
 	}
 
 	private Operand src(String instruction) {
@@ -107,11 +114,11 @@ public class Instruction {
 				srcString = srcString + srcToken.charAt(regIndex + 2); // Get second register number if present
 			}
 			Integer srcReg = Integer.parseInt(srcString);
-			return new Operand(null, srcReg, srcType);
+			return new Operand(srcReg, srcType);
 			
 		} else {
 			int branchTarget = Integer.parseInt(srcToken);
-			return new Operand(branchTarget, null, null);
+			return new Operand(branchTarget);
 		}
 	}
 	
@@ -132,9 +139,9 @@ public class Instruction {
 					i++;
 				}
 				Integer target = Integer.parseInt(srcOffset);
-				return new Operand(target, null, null);
+				return new Operand(target);
 			} else {
-				return new Operand(null, null, null);
+				return null;
 			}
 		}
 		
@@ -147,10 +154,10 @@ public class Instruction {
 			if(targetToken.charAt(0) == 'F') {
 				targetType = RegisterType.FLOAT;
 			}
-			return new Operand(null, targetReg, targetType);
+			return new Operand(targetReg, targetType);
 		} else { // Is an immediate type instruction
 			Integer target = Integer.parseInt(tokens[3]);
-			return new Operand(target, null, null);
+			return new Operand(target);
 		}
 	}
 	

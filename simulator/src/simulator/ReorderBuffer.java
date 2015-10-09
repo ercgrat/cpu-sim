@@ -24,13 +24,15 @@ public class ReorderBuffer {
     private RegisterFile<Integer> intRegisters;
     private RegisterFile<Double> floatRegisters;
     private ReservationStations resStations;
+    private Scoreboard scoreboard;
     
-    public ReorderBuffer(int NR, int NC,  RegisterFile<Integer> intRegisters,  RegisterFile<Double> floatRegisters, ReservationStations resStations){
+    public ReorderBuffer(int NR, int NC,  RegisterFile<Integer> intRegisters,  RegisterFile<Double> floatRegisters, ReservationStations resStations, Scoreboard scoreboard){
         this.NR = NR;
         this.NC = NC;
         this.intRegisters = intRegisters;
         this.floatRegisters = floatRegisters;
         this.resStations = resStations;
+        this.scoreboard = scoreboard;
         head = 0;
         ROB = new ROBEntry[NR];
     }
@@ -65,6 +67,7 @@ public class ReorderBuffer {
             floatRegisters.write(entry.inst.dest.registerIndex, entry.floatValue);
             resStations.writeback(robSlot, entry.floatValue);
         }
+        scoreboard.writeback(robSlot);
     }
     
     public boolean hasSlot() {

@@ -8,11 +8,13 @@ import java.util.*;
 
 public class ReservationStations {
     
-    private Station[] Stations=new Station[19];
+    private final int numStations = 19;
+    private Station[] Stations;
+    private Scoreboard scoreboard;
     
-    
-    public ReservationStations(){
-        for(int i=0;i<19;i++){
+    public ReservationStations(Scoreboard scoreboard){
+        Stations = new Station[numStations];
+        for(int i = 0; i < numStations; i++){
             this.Stations[i].isFree = true;
             this.Stations[i].justFreed = false;
             this.Stations[i].instruction = null;
@@ -43,10 +45,12 @@ public class ReservationStations {
         boolean isWaiting;
         String unit;
         Instruction instruction;
+        int srcName;
+        int targetName;
     }
     
     public void cycle(){
-        for(int i=0;i<19;i++){
+        for(int i=0;i<numStations;i++){
             if(Stations[i].justFreed){
                 Stations[i].isFree = true;
                 Stations[i].justFreed = false;
@@ -147,19 +151,85 @@ public class ReservationStations {
     }
     
     public void writeback(int robSlot, Integer val) {
-        
+        for(int i = 0; i < numStations; i++) {
+            if(Stations[i].isWaiting) {
+                if(Stations[i].srcName >= 0) {
+                    if(Stations[i].targetName >= 0) { // both source and target are waiting
+                        if(Stations[i].srcName == robSlot) { // if source matches writeback slot, read value
+                            Stations[i].instruction.src.intValue = val;
+                            Stations[i].srcName = -1;
+                        }
+                        if(Stations[i].targetName == robSlot) { // if target matches writeback slot, read value
+                            Stations[i].instruction.target.intValue = val;
+                            Stations[i].targetName = -1;
+                        }
+                        // done waiting if both operands match the writeback slot
+                        if(Stations[i].srcName == robSlot && Stations[i].targetName == robSlot) {
+                            Stations[i].isWaiting = false;
+                        }
+                    } else { // just source is waiting
+                        if(Stations[i].srcName == robSlot) { // source matches the writeback slot, done waiting
+                            Stations[i].instruction.src.intValue = val;
+                            Stations[i].isWaiting = false;
+                        }
+                    }
+                } else { // just target is waiting
+                    if(Stations[i].targetName == robSlot) { // target matches the writeback slot, done waiting
+                        Stations[i].instruction.target.intValue = val;
+                        Stations[i].isWaiting = false;
+                    }
+                }
+            }
+        }
     }
     
     public void writeback(int robSlot, Double val) {
-        
+        for(int i = 0; i < numStations; i++) {
+            if(Stations[i].isWaiting) {
+                if(Stations[i].srcName >= 0) {
+                    if(Stations[i].targetName >= 0) { // both source and target are waiting
+                        if(Stations[i].srcName == robSlot) { // if source matches writeback slot, read value
+                            Stations[i].instruction.src.floatValue = val;
+                            Stations[i].srcName = -1;
+                        }
+                        if(Stations[i].targetName == robSlot) { // if target matches writeback slot, read value
+                            Stations[i].instruction.target.floatValue = val;
+                            Stations[i].targetName = -1;
+                        }
+                        // done waiting if both operands match the writeback slot
+                        if(Stations[i].srcName == robSlot && Stations[i].targetName == robSlot) {
+                            Stations[i].isWaiting = false;
+                        }
+                    } else { // just source is waiting
+                        if(Stations[i].srcName == robSlot) { // source matches the writeback slot, done waiting
+                            Stations[i].instruction.src.floatValue = val;
+                            Stations[i].isWaiting = false;
+                        }
+                    }
+                } else { // just target is waiting
+                    if(Stations[i].targetName == robSlot) { // target matches the writeback slot, done waiting
+                        Stations[i].instruction.target.floatValue = val;
+                        Stations[i].isWaiting = false;
+                    }
+                }
+            }
+        }
     }
     
     public void reserveStation(int i, Instruction instruction){
         Stations[i].isFree = false;
         Stations[i].finishedExec = false;
         Stations[i].instruction = instruction;
-        /*Add code to check if the instruction is waiting on an operand in 
-         the ROB, then set the isWaiting flag to true*/
+        
+        // Gets register values if available
+        scoreboard.loadOp(instruction.src);
+        scoreboard.loadOp(instruction.target);
+        
+        Stations[i].srcName = scoreboard.getName(instruction.src);
+        Stations[i].targetName = scoreboard.getName(instruction.target);
+        if(Stations[i].srcName != -1 || Stations[i].targetName != -1) {
+            Stations[i].isWaiting = true;
+        }
     }
     
 }

@@ -13,12 +13,14 @@ public class IssueUnit {
     private DecodeUnit decodeUnit;
     private ReservationStations reservationStations;
     private ReorderBuffer reorderBuffer;
+    private Scoreboard scoreboard;
     
-    public IssueUnit(int NW, DecodeUnit decodeUnit, ReservationStations reservationStations, ReorderBuffer reorderBuffer){
+    public IssueUnit(int NW, DecodeUnit decodeUnit, ReservationStations reservationStations, ReorderBuffer reorderBuffer, Scoreboard scoreboard) {
         this.NW = NW;
         this.decodeUnit = decodeUnit;
         this.reservationStations = reservationStations;
         this.reorderBuffer = reorderBuffer;
+        this.scoreboard = scoreboard;
     }
     
     public void cycle(){
@@ -29,8 +31,9 @@ public class IssueUnit {
             else{
                 int stNum = reservationStations.isFree(nextInst.unit);
                 if(stNum!=0 && reorderBuffer.hasSlot()){
-                    reservationStations.reserveStation(stNum, nextInst);
                     int robSlot = reorderBuffer.reserveSlot(nextInst);
+                    scoreboard.rename(nextInst.dest, robSlot);
+                    reservationStations.reserveStation(stNum, nextInst);
                     decodeUnit.dequeue();
                 }
                 else
