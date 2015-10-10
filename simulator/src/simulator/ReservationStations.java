@@ -49,6 +49,7 @@ public class ReservationStations {
         Instruction instruction;
         int srcName;
         int targetName;
+        int destName;
     }
     
     public void cycle(){
@@ -165,7 +166,7 @@ public class ReservationStations {
     public void writeback(int robSlot, Integer val) {
         for(int i = 0; i < numStations; i++) {
             if(Stations[i].isWaiting) {
-                if(Stations[i].srcName >= 0) {
+                if(Stations[i].srcName >= 0  && Stations[i].destName < 0) {
                     if(Stations[i].targetName >= 0) { // both source and target are waiting
                         if(Stations[i].srcName == robSlot) { // if source matches writeback slot, read value
                             Stations[i].instruction.src.intValue = val;
@@ -185,9 +186,27 @@ public class ReservationStations {
                             Stations[i].isWaiting = false;
                         }
                     }
-                } else { // just target is waiting
+                } else if(Stations[i].destName < 0){ // just target is waiting
                     if(Stations[i].targetName == robSlot) { // target matches the writeback slot, done waiting
                         Stations[i].instruction.target.intValue = val;
+                        Stations[i].isWaiting = false;
+                    }
+                } else if(Stations[i].srcName >= 0  && Stations[i].destName >= 0){
+                    if(Stations[i].srcName == robSlot) { // if source matches writeback slot, read value
+                        Stations[i].instruction.src.intValue = val;
+                        Stations[i].srcName = -1;
+                    }
+                    if(Stations[i].destName == robSlot) {
+                        Stations[i].instruction.dest.intValue = val;
+                        Stations[i].destName = -1;
+                    }
+                    // done waiting if both operands match the writeback slot
+                    if(Stations[i].srcName == robSlot && Stations[i].destName == robSlot) {
+                        Stations[i].isWaiting = false;
+                    }
+                } else{
+                    if(Stations[i].destName == robSlot) { // Dest matches the writeback slot, done waiting
+                        Stations[i].instruction.dest.intValue = val;
                         Stations[i].isWaiting = false;
                     }
                 }
@@ -237,7 +256,14 @@ public class ReservationStations {
         // Gets register values if available
         scoreboard.loadOp(instruction.src);
         scoreboard.loadOp(instruction.target);
-        
+        Stations[i].destName = -1;
+        if(instruction.op.startsWith("B", 0)){
+            scoreboard.loadOp(instruction.dest);
+            Stations[i].destName = scoreboard.getName(instruction.dest);
+            if(Stations[i].destName != -1)
+                Stations[i].isWaiting = true;
+        }
+            
         Stations[i].srcName = scoreboard.getName(instruction.src);
         Stations[i].targetName = scoreboard.getName(instruction.target);
         if(Stations[i].srcName != -1 || Stations[i].targetName != -1) {
