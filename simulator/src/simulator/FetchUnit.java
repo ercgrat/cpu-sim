@@ -86,17 +86,24 @@ public class FetchUnit {
 			PC = PC + 4;
 			int PCIndex = (PC - baseAddr)/4;
 			
-			if(branchTable.hasEntry(PCIndex) && branchTable.branchCondition(PCIndex)) {
-				// Do branch stuff here
-				PC = branchTable.targetAddress(PCIndex);
-				cacheLine.clear();
-				cacheLine.add(instructionMemory.get(PCIndex));
-				cacheLine.add(instructionMemory.get(PCIndex + 1));
-				cacheLine.add(instructionMemory.get(PCIndex + 2));
-				cacheLine.add(instructionMemory.get(PCIndex + 3));
-				break;
+			if(branchTable.hasEntry(PCIndex)) {
+				boolean branchCondition = branchTable.branchCondition(PCIndex);
+				instructionQueue.add(inst + ";" + PCIndex + ";" + branchCondition);
+				if(branchCondition == true) {
+					// Do branch stuff here
+					PC = branchTable.targetAddress(PCIndex);
+					PCIndex = (PC - baseAddr)/4;
+					cacheLine.clear();
+					cacheLine.add(instructionMemory.get(PCIndex));
+					cacheLine.add(instructionMemory.get(PCIndex + 1));
+					cacheLine.add(instructionMemory.get(PCIndex + 2));
+					cacheLine.add(instructionMemory.get(PCIndex + 3));
+					break;
+				}
+			} else {
+				instructionQueue.add(inst + ";" + PCIndex);
 			}
-			instructionQueue.add(inst + ";" + PCIndex);
+			
 		}
 	}
 	

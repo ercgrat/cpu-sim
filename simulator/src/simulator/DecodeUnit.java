@@ -21,6 +21,9 @@ public class DecodeUnit {
 		for(String instString : dequeuedInstructions) {
 			String[] tokens = instString.split(";");
 			Instruction inst = new Instruction(tokens[0], Integer.parseInt(tokens[1]));
+			if(tokens.length > 2) {
+				inst.branchCondition = Boolean.parseBoolean(tokens[2]);
+			}
 			renameRegisters(inst);
 			issueQueue.add(inst);
 		}

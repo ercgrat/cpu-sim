@@ -7,6 +7,7 @@ public class Instruction {
         int stNum;
         int robSlot;
 	int address;
+	boolean branchCondition;
 	String op, unit;
 	Operand dest, src, target;
 	
