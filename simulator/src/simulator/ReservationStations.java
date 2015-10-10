@@ -20,6 +20,7 @@ public class ReservationStations {
             this.Stations[i].instruction = null;
             this.Stations[i].finishedExec = true;
             this.Stations[i].isWaiting = false;
+            this.Stations[i].isExecuting = false;
             if(i<2)
                 this.Stations[i].unit = "INT0";
             else if(i<4)
@@ -43,6 +44,7 @@ public class ReservationStations {
         boolean justFreed;
         boolean finishedExec;
         boolean isWaiting;
+        boolean isExecuting;
         String unit;
         Instruction instruction;
         int srcName;
@@ -101,7 +103,16 @@ public class ReservationStations {
                 }
                 break;
         }
-        return 0;
+        return -1;
+    }
+    
+    public Instruction getInstruction(int stNum){
+        Stations[stNum].isExecuting = true;
+        return Stations[stNum].instruction;
+    }
+    
+    public Instruction checkInstruction(int stNum){
+        return Stations[stNum].instruction;
     }
     
     public int isReady(String Unit){
@@ -120,7 +131,7 @@ public class ReservationStations {
                 break;
             case "MULT":
                 for(int i=4;i<6;i++){
-                    if(!Stations[i].isFree && !Stations[i].isWaiting && Stations[i].instruction!=null)
+                    if(!Stations[i].isFree && !Stations[i].isWaiting && Stations[i].instruction!=null && !Stations[i].isExecuting)
                         return i;
                 }
                 break;
@@ -132,7 +143,7 @@ public class ReservationStations {
                 break;
             case "FPU":
                 for(int i=12;i<17;i++){
-                    if(!Stations[i].isFree && !Stations[i].isWaiting && Stations[i].instruction!=null)
+                    if(!Stations[i].isFree && !Stations[i].isWaiting && Stations[i].instruction!=null && !Stations[i].isExecuting)
                         return i;
                 }
                 break;
@@ -143,10 +154,11 @@ public class ReservationStations {
                 }
                 break;
         }
-        return 0;
+        return -1;
     }
     
     public void finishedExecution(int stNum){
+        Stations[stNum].isExecuting = false;
         Stations[stNum].finishedExec = true;
     }
     
@@ -216,11 +228,12 @@ public class ReservationStations {
         }
     }
     
-    public void reserveStation(int i, Instruction instruction){
+    public void reserveStation(int i, Instruction instruction, int robSlot){
         Stations[i].isFree = false;
         Stations[i].finishedExec = false;
         Stations[i].instruction = instruction;
-        
+        Stations[i].instruction.robSlot = robSlot;
+        Stations[i].instruction.stNum = i;
         // Gets register values if available
         scoreboard.loadOp(instruction.src);
         scoreboard.loadOp(instruction.target);
