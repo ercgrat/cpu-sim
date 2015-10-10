@@ -30,10 +30,10 @@ public class IssueUnit {
                 break;
             else{
                 int stNum = reservationStations.isFree(nextInst.unit);
-                if(stNum!=0 && reorderBuffer.hasSlot()){
+                if(stNum != -1 && reorderBuffer.hasSlot()){
                     int robSlot = reorderBuffer.reserveSlot(nextInst);
                     scoreboard.rename(nextInst.dest, robSlot);
-                    reservationStations.reserveStation(stNum, nextInst);
+                    reservationStations.reserveStation(stNum, nextInst, robSlot);
                     decodeUnit.dequeue();
                 }
                 else
