@@ -86,18 +86,20 @@ public class ReorderBuffer {
         return index;
     }
     
-    public void write(int index, Integer val) {
+    public boolean write(int index, Integer val) {
         if(index >= 0 && index < NR) {
             ROB[index].hasValue = true;
             ROB[index].intValue = val;
         }
+        return true;
     }
     
-    public void write(int index, Double val) {
+    public boolean write(int index, Double val) {
         if(index >= 0 && index < NR) {
             ROB[index].hasValue = true;
             ROB[index].floatValue = val;
         }
+        return true;
     }
     
     private int next() {
