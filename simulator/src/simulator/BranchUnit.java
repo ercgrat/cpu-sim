@@ -36,16 +36,16 @@ public class BranchUnit {
             boolean branchOutcome = BU.instruction.branchCondition;
             switch(BU.instruction.op){
                 case "BEQZ":
-                    branchOutcome = (BU.instruction.src.intValue == 0);
+                    branchOutcome = (BU.instruction.dest.intValue == 0);
                     break;
                 case "BNEZ":
-                    branchOutcome = (BU.instruction.src.intValue != 0);
+                    branchOutcome = (BU.instruction.dest.intValue != 0);
                     break;
                 case "BEQ":
-                    branchOutcome = (BU.instruction.src.intValue == BU.instruction.target.intValue);
+                    branchOutcome = (BU.instruction.src.intValue == BU.instruction.dest.intValue);
                     break;
                 case "BNE":
-                    branchOutcome = (BU.instruction.src.intValue != BU.instruction.target.intValue);
+                    branchOutcome = (BU.instruction.src.intValue != BU.instruction.dest.intValue);
                     break;
             }
             if(branchOutcome != BU.instruction.branchCondition){
