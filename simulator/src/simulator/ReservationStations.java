@@ -183,7 +183,7 @@ public class ReservationStations {
         }
     }
     
-    public void writeback(int robSlot, Double val) {
+    public void writeback(int robSlot, Float val) {
         for(int i = 0; i < numStations; i++) {
             if(Stations[i].isWaiting) {
                 if(Stations[i].srcName >= 0) {

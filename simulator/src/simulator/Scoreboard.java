@@ -7,10 +7,10 @@ public class Scoreboard {
     private final int numRegisters = 32;
     int[] intRegisterNames, floatRegisterNames;
     RegisterFile<Integer> intRegisters;
-    RegisterFile<Double> floatRegisters;
+    RegisterFile<Float> floatRegisters;
     
 
-    public Scoreboard(RegisterFile<Integer> intRegisters, RegisterFile<Double> floatRegisters) {
+    public Scoreboard(RegisterFile<Integer> intRegisters, RegisterFile<Float> floatRegisters) {
         this.intRegisters = intRegisters;
         this.floatRegisters = floatRegisters;
         intRegisterNames = new int[numRegisters];

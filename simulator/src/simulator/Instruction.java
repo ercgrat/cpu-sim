@@ -15,7 +15,7 @@ public class Instruction {
 	
 	public class Operand {
 		Integer intValue;
-        Double floatValue;
+        Float floatValue;
 		Integer registerIndex;
 		RegisterType registerType;
 		

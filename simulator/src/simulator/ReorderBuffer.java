@@ -12,28 +12,30 @@ public class ReorderBuffer {
         Instruction inst;
         boolean hasValue;
         Integer intValue;
-        Double floatValue;
+        Float floatValue;
+        boolean flushFlag;
         
         public ROBEntry(Instruction inst) {
             this.inst = inst;
             hasValue = false;
+            flushFlag = false;
         }
     }
     
     private int NR, NC, head, writtenThisCycle;
     private ROBEntry[] ROB;
     private RegisterFile<Integer> intRegisters;
-    private RegisterFile<Double> floatRegisters;
+    private RegisterFile<Float> floatRegisters;
     private ReservationStations resStations;
     private Scoreboard scoreboard;
 	private ArrayList<Integer> intIndexWriteQueue;
 	private ArrayList<Integer> floatIndexWriteQueue;
 	private ArrayList<Integer> intValueWriteQueue;
-    private ArrayList<Double> floatValueWriteQueue;
+    private ArrayList<Float> floatValueWriteQueue;
 	private ArrayList<Integer> indexCommitQueue;
 	private ArrayList<ROBEntry> entryCommitQueue;
 	
-    public ReorderBuffer(int NR, int NC,  RegisterFile<Integer> intRegisters,  RegisterFile<Double> floatRegisters, ReservationStations resStations, Scoreboard scoreboard){
+    public ReorderBuffer(int NR, int NC,  RegisterFile<Integer> intRegisters,  RegisterFile<Float> floatRegisters, ReservationStations resStations, Scoreboard scoreboard, Map<Integer, Float> memory){
         this.NR = NR;
         this.NC = NC;
         this.intRegisters = intRegisters;
@@ -47,7 +49,7 @@ public class ReorderBuffer {
 		intIndexWriteQueue = new ArrayList<Integer>();
 		floatIndexWriteQueue = new ArrayList<Integer>();
 		intValueWriteQueue = new ArrayList<Integer>();
-		floatValueWriteQueue = new ArrayList<Double>();
+		floatValueWriteQueue = new ArrayList<Float>();
 		indexCommitQueue = new ArrayList<Integer>();
 		entryCommitQueue = new ArrayList<ROBEntry>();
     }
@@ -59,9 +61,11 @@ public class ReorderBuffer {
 			int robSlot = intIndexWriteQueue.get(i);
 			ROB[robSlot].hasValue = true;
             ROB[robSlot].intValue = intValueWriteQueue.get(i);
-			resStations.writeback(robSlot, ROB[robSlot].intValue);
-			scoreboard.writeback(robSlot);
-			writtenThisCycle++;
+            if(ROB[robSlot].flushFlag == false) { // Ignore instruction if set to be flushed
+                resStations.writeback(robSlot, ROB[robSlot].intValue);
+                scoreboard.writeback(robSlot);
+                writtenThisCycle++;
+            }
 		}
 		intIndexWriteQueue.clear();
 		intValueWriteQueue.clear();
@@ -69,9 +73,11 @@ public class ReorderBuffer {
 			int robSlot = floatIndexWriteQueue.get(i);
 			ROB[robSlot].hasValue = true;
             ROB[robSlot].floatValue = floatValueWriteQueue.get(i);
-			resStations.writeback(robSlot, ROB[robSlot].floatValue);
-			scoreboard.writeback(robSlot);
-			writtenThisCycle++;
+            if(ROB[robSlot].flushFlag == false) { // Ignore instruction if set to be flushed
+                resStations.writeback(robSlot, ROB[robSlot].floatValue);
+                scoreboard.writeback(robSlot);
+                writtenThisCycle++;
+            }
 		}
         floatIndexWriteQueue.clear();
 		floatValueWriteQueue.clear();
@@ -88,7 +94,7 @@ public class ReorderBuffer {
 		writtenThisCycle = 0;
     }
     
-	public void commit() {
+	public void commit() { // To be called as a second "cycle()" method, after execution stations finish
 		int current = head;
         ROBEntry entry = ROB[current];
 		
@@ -100,10 +106,12 @@ public class ReorderBuffer {
 		
 		// Commit in order from oldest instructions, if values are ready, while bandwidth available on the CDB
         while(entry.hasValue && writtenThisCycle < NC) {
-			indexCommitQueue.add(current);
-			entryCommitQueue.add(entry);
-            ROB[current] = null;
-            writtenThisCycle++;
+            if(entry.flushFlag == false) { // Not marked for flushing
+                indexCommitQueue.add(current);
+                entryCommitQueue.add(entry);
+                writtenThisCycle++;
+            }
+            ROB[current] = null; // Flush whether committed or flushed
             
             // Go to next oldest entry
             current = next(current);
@@ -120,6 +128,21 @@ public class ReorderBuffer {
             resStations.writeback(robSlot, entry.floatValue);
         }
         scoreboard.writeback(robSlot);
+    }
+    
+    public void flush(Inst branch) {
+        int current = previous();
+        ROBEntry entry = ROB[current];
+        while(true) {
+            if(entry.inst == branch) {
+                int flushIndex = next(current);
+                while(flushIndex != head) {
+                    ROB[flushIndex].flushFlag = true;
+                    flushIndex = next(flushIndex);
+                }
+                break;
+            }
+        }
     }
     
     public boolean hasSlot() {
@@ -149,7 +172,7 @@ public class ReorderBuffer {
 		}
     }
     
-    public boolean write(int index, Double val) {
+    public boolean write(int index, Float val) {
         if(writtenThisCycle < NC && index >= 0 && index < NR) {
 			floatIndexWriteQueue.add(index);
 			floatValueWriteQueue.add(val);
@@ -160,11 +183,34 @@ public class ReorderBuffer {
 		}
     }
     
+    public boolean isBefore(Instruction i, Instruction j) {
+        int current = previous();
+        ROBEntry entry = ROB[current];
+        while(current != head) {
+            if(entry.inst == i) { // Compares pointers
+                return false;
+            } else if(entry.inst == j) { // Compares pointers
+                return true;
+            }
+            current = previous(current);
+            entry = ROB[current];
+        }
+        return false;
+    }
+    
     private int next() {
         return (head + 1) % NR;
     }
     
     private int next(int index) {
         return (index + 1) % NR;
+    }
+    
+    private int previous() {
+        return (head - 1) % NR;
+    }
+    
+    private int previous(int index) {
+        return (index - 1) % NR;
     }
 }
