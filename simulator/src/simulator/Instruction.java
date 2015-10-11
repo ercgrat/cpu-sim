@@ -4,6 +4,9 @@ public class Instruction {
 	
 	private static final String delimiters = ", | |,"; // Split on comma space OR space or comma (order matters here; the largest delimiter needs to be first)
 	
+        int stNum;
+        int robSlot;
+        int memoryAddress;
 	int address;
 	boolean branchCondition;
 	String op, unit;
