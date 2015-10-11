@@ -130,7 +130,7 @@ public class ReorderBuffer {
         scoreboard.writeback(robSlot);
     }
     
-    public void flush(Inst branch) {
+    public void flush(Instruction branch) {
         int current = previous();
         ROBEntry entry = ROB[current];
         while(true) {
