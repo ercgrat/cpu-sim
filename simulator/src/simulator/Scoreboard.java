@@ -22,13 +22,17 @@ public class Scoreboard {
     }
     
     public int getName(Instruction.Operand op) {
-        if(op.registerType == null) {
+        if(op == null) {
             return -1;
         } else {
-            if(op.registerType == Instruction.RegisterType.INT) {
-                return intRegisterNames[op.registerIndex];
+            if(op.registerType == null) {
+                return -1;
             } else {
-                return floatRegisterNames[op.registerIndex];
+                if(op.registerType == Instruction.RegisterType.INT) {
+                    return intRegisterNames[op.registerIndex];
+                } else {
+                    return floatRegisterNames[op.registerIndex];
+                }
             }
         }
     }
@@ -44,14 +48,16 @@ public class Scoreboard {
     
     // If the register is not renamed, read the value from the register into the operand
     public void loadOp(Instruction.Operand op) {
-        if(op.registerType != null) {
-            if(op.registerType == Instruction.RegisterType.INT) {
-                if(intRegisterNames[op.registerIndex] == -1) {
-                    op.intValue = intRegisters.read(op.registerIndex);
-                }
-            } else {
-                if(floatRegisterNames[op.registerIndex] == -1) {
-                    op.floatValue = floatRegisters.read(op.registerIndex);
+        if(op != null) {
+            if(op.registerType != null) {
+                if(op.registerType == Instruction.RegisterType.INT) {
+                    if(intRegisterNames[op.registerIndex] == -1) {
+                        op.intValue = intRegisters.read(op.registerIndex);
+                    }
+                } else {
+                    if(floatRegisterNames[op.registerIndex] == -1) {
+                        op.floatValue = floatRegisters.read(op.registerIndex);
+                    }
                 }
             }
         }

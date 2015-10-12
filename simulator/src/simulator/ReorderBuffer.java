@@ -57,9 +57,9 @@ public class ReorderBuffer {
     }
     
     public void cycle() {
-        
 		// Write back what came from the execution stage last cycle and empty the writeback queues
-		for(int i = 0; i < intIndexWriteQueue.size(); i++) {
+		System.out.println("Int write queue: " + intIndexWriteQueue);
+        for(int i = 0; i < intIndexWriteQueue.size(); i++) {
 			int robSlot = intIndexWriteQueue.get(i);
 			ROB[robSlot].hasValue = true;
             ROB[robSlot].intValue = intValueWriteQueue.get(i);
@@ -72,6 +72,7 @@ public class ReorderBuffer {
 		intIndexWriteQueue.clear();
 		intValueWriteQueue.clear();
         
+        System.out.println("Float write queue: " + floatIndexWriteQueue);
 		for(int i = 0; i < floatIndexWriteQueue.size(); i++) {
 			int robSlot = floatIndexWriteQueue.get(i);
 			ROB[robSlot].hasValue = true;
@@ -86,6 +87,7 @@ public class ReorderBuffer {
 		floatValueWriteQueue.clear();
 		
 		// Write back what was committed last cycle and empty the commit queues
+        System.out.println("Commit queue: " + indexCommitQueue);
 		for(int i = 0; i < indexCommitQueue.size(); i++) {
 			int current = indexCommitQueue.get(i);
 			ROBEntry entry = entryCommitQueue.get(i);
@@ -100,18 +102,20 @@ public class ReorderBuffer {
 	public void stageCommits() { // To be called as a second "cycle()" method, after execution stations finish
 		int current = head;
         ROBEntry entry = ROB[current];
-		
 		// Find the oldest instruction
-        while(entry == null) {
+        while(current != previous() && entry == null) {
             current = next(current);
             entry = ROB[current];
         }
-		
+        if(entry != null)
+            System.out.println("Oldest instruction in ROB: " + entry.inst);
 		// Commit in order from oldest instructions, if values are ready, while bandwidth available on the CDB
-        while(entry.hasValue && writtenThisCycle < NC) {
+        while(entry != null && entry.hasValue && writtenThisCycle < NC) {
+            
             if(entry.flushFlag == false) { // Not marked for flushing
                 indexCommitQueue.add(current);
                 entryCommitQueue.add(entry);
+                System.out.println(entry.inst);
                 writtenThisCycle++;
             }
             ROB[current] = null; // Flush whether committed or flushed
@@ -140,6 +144,8 @@ public class ReorderBuffer {
             }
         }
         scoreboard.writeback(robSlot);
+        System.out.println(intRegisters);
+        System.out.println(floatRegisters);
         
         if(entry.inst.unit.equals("Store") || entry.inst.unit.equals("Load")) { // Load/store res stations are locked until commit
             resStations.finishedExecution(entry.inst.stNum);
@@ -178,6 +184,7 @@ public class ReorderBuffer {
     }
     
     public boolean write(int index, Integer val) {
+        System.out.println("Staged writeback of " + val + " to ROB slot " + index + ".");
         if(writtenThisCycle < NC && index >= 0 && index < NR) {
 			intIndexWriteQueue.add(index);
 			intValueWriteQueue.add(val);
@@ -189,6 +196,7 @@ public class ReorderBuffer {
     }
     
     public boolean write(int index, Float val) {
+        System.out.println("Staged writeback of " + val + " to ROB slot " + index + ".");
         if(writtenThisCycle < NC && index >= 0 && index < NR) {
 			floatIndexWriteQueue.add(index);
 			floatValueWriteQueue.add(val);
@@ -223,10 +231,18 @@ public class ReorderBuffer {
     }
     
     private int previous() {
-        return (head - 1) % NR;
+        if(head == 0) {
+            return NR - 1;
+        } else {
+            return head - 1;
+        }
     }
     
     private int previous(int index) {
-        return (index - 1) % NR;
+        if(index == 0) {
+            return NR - 1;
+        } else {
+            return index - 1;
+        }
     }
 }

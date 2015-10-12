@@ -27,4 +27,8 @@ public class RegisterFile<T> {
             return null;
         }
     }
+    
+    public String toString() {
+        return registers.toString();
+    }
 }

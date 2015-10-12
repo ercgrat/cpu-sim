@@ -35,12 +35,11 @@ public class IntUnits {
                     stNum = reservationStations.isReady("INT0");
                 else
                     stNum = reservationStations.isReady("INT1");
-                if(stNum != -1){
+                if(stNum != -1) {
                     INTS[i].instruction = reservationStations.getInstruction(stNum);
                     INTS[i].curCycle++;
                 }
-            }
-            else if(!INTS[i].isWaiting){
+            } else if(!INTS[i].isWaiting) {
                 switch(INTS[i].instruction.op){
                     case "AND":
                     case "ANDI":

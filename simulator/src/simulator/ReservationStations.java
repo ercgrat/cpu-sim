@@ -130,14 +130,16 @@ public class ReservationStations {
         switch(Unit){
             case "INT0":
                 for(int i=0;i<2;i++){
-                    if(!Stations[i].isFree && !Stations[i].isWaiting && Stations[i].instruction!=null)
+                    if(!Stations[i].isFree && !Stations[i].isWaiting && Stations[i].instruction!=null) {
                         return i;
+                    }
                 }
                 break;
             case "INT1":
                 for(int i=2;i<4;i++){
-                    if(!Stations[i].isFree && !Stations[i].isWaiting && Stations[i].instruction!=null)
+                    if(!Stations[i].isFree && !Stations[i].isWaiting && Stations[i].instruction!=null) {
                         return i;
+                    }
                 }
                 break;
             case "MULT":
@@ -182,7 +184,8 @@ public class ReservationStations {
         return -1;
     }
     
-    public void finishedExecution(int stNum){
+    public void finishedExecution(int stNum) {
+        System.out.println("Freed reservation station.");
         Stations[stNum].isExecuting = false;
         Stations[stNum].finishedExec = true;
     }

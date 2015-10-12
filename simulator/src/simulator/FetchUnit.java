@@ -61,23 +61,28 @@ public class FetchUnit {
 		branchTable = new BranchTable();
 	}
 	
-	public void cycle() {
-		enqueue();
+	public boolean cycle() {
+		return enqueue();
 	}
 	
 	// Fetch a cache line and add to the instruction queue, checking for branch predictions/incrementing the PC
-	private void enqueue() {
+	private boolean enqueue() {
 		int instIndex = (PC - baseAddr)/4;
 		int cacheLinePotential = 4;
 		if(cacheLine.size() > 0) { // Instructions are remaining on the cache line
 			cacheLinePotential = cacheLine.size();
 		} else { // Read 4 onto the cache line
-			cacheLine.add(instructionMemory.get(instIndex));
-			cacheLine.add(instructionMemory.get(instIndex + 1));
-			cacheLine.add(instructionMemory.get(instIndex + 2));
-			cacheLine.add(instructionMemory.get(instIndex + 3));
+            for(int i = 0; i < 4; i++) {
+                if(instIndex + i < instructionMemory.size()) {
+                    cacheLine.add(instructionMemory.get(instIndex + i));
+                } else {
+                    break;
+                }
+            }
 		}
-		int numInsts = Math.min(NQ - instructionQueue.size(), cacheLinePotential);
+        
+        boolean readingInstructions = (cacheLine.size() == 0);
+		int numInsts = Math.min(Math.min(NQ - instructionQueue.size(), cacheLinePotential), cacheLine.size());
 		
 		// Move instructions from cache line to queue
 		for(int i = 0; i < numInsts; i++) {
@@ -103,8 +108,9 @@ public class FetchUnit {
 			} else {
 				instructionQueue.add(inst + ";" + PCIndex);
 			}
-			
 		}
+        
+        return readingInstructions;
 	}
 	
 	public ArrayList<String> dequeue(int numRequested) {

@@ -24,7 +24,7 @@ public class Simulator {
 		}
 		String filename = args[0];
         
-        int NF = 4, NQ = 8, ND = 4, NI = 8, NW = 4, NR = 4, NC = 4;
+        int NF = 4, NQ = 8, ND = 4, NI = 8, NW = 4, NR = 32, NC = 4;
         
 		Emulator emulator = new Emulator();
 		ArrayList<String> instructions = emulator.readInstructions(filename);
@@ -49,6 +49,8 @@ public class Simulator {
         BranchUnit branchUnit = new BranchUnit(reservationStations, reorderBuffer);
         Instruction branchInstruction = null;
         int cycles = 0;
+        int countdown = 30;
+        boolean readingInstructions = true;
         while(true) {
             cycles++;
             System.out.println("----------Cycle " + cycles + "----------");
@@ -59,20 +61,20 @@ public class Simulator {
             reorderBuffer.cycle();
             
             // execution
-            System.out.println("*****Execution");
+            System.out.println("*****Execution INT");
             intUnits.cycle();
-            System.out.println("*****Execution");
+            System.out.println("*****Execution FPU");
             fpUnit.cycle();
-            System.out.println("*****Execution");
+            System.out.println("*****Execution MULT");
             multUnit.cycle();
-            System.out.println("*****Execution");
+            System.out.println("*****Execution LOAD/STORE");
             lsUnit.cycle();
-            System.out.println("*****Execution");
+            System.out.println("*****Execution BRANCH");
             branchInstruction = branchUnit.cycle();
-            System.out.println("*****Last Execution");
+            System.out.println("*****Stage Commits");
             reorderBuffer.stageCommits(); // necessary for prioritizing writeback from execution units
-            System.out.println("*****Finished Stage Commits");
             if(branchInstruction != null){
+                System.out.println("*****Branch - flush pipeline");
                 reorderBuffer.flush(branchInstruction);
                 decodeUnit.flush();
                 fetchUnit.flush(branchInstruction);
@@ -90,10 +92,13 @@ public class Simulator {
             
                 // fetch
                 System.out.println("*****Fetch");
-                fetchUnit.cycle();    
+                readingInstructions = fetchUnit.cycle();
             }
-            if(cycles == 1000) {
-                break;
+            if(true) {
+                countdown--;
+                if(countdown == 0) {
+                    break;
+                }
             }
         }
 	}
