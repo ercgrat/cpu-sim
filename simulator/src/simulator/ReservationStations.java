@@ -15,26 +15,21 @@ public class ReservationStations {
     public ReservationStations(Scoreboard scoreboard){
         Stations = new Station[numStations];
         for(int i = 0; i < numStations; i++){
-            this.Stations[i].isFree = true;
-            this.Stations[i].justFreed = false;
-            this.Stations[i].instruction = null;
-            this.Stations[i].finishedExec = true;
-            this.Stations[i].isWaiting = false;
-            this.Stations[i].isExecuting = false;
+            Stations[i] = new Station();
             if(i<2)
-                this.Stations[i].unit = "INT0";
+                Stations[i].unit = "INT0";
             else if(i<4)
-                this.Stations[i].unit = "INT1";
+                Stations[i].unit = "INT1";
             else if(i<6)
-                this.Stations[i].unit = "MULT";
+                Stations[i].unit = "MULT";
             else if(i<9)
-                this.Stations[i].unit = "Load";
+                Stations[i].unit = "Load";
             else if(i<12)
-                this.Stations[i].unit = "Store";
+                Stations[i].unit = "Store";
             else if(i<17)
-                this.Stations[i].unit = "FPU";
+                Stations[i].unit = "FPU";
             else
-                this.Stations[i].unit = "BU";
+                Stations[i].unit = "BU";
             
         }
     }
@@ -50,6 +45,15 @@ public class ReservationStations {
         int srcName;
         int targetName;
         int destName;
+        
+        public Station() {
+            isFree = true;
+            justFreed = false;
+            instruction = null;
+            finishedExec = true;
+            isWaiting = false;
+            isExecuting = false;
+        }
     }
     
     public void cycle(){

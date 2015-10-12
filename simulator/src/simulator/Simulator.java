@@ -23,12 +23,65 @@ public class Simulator {
 			return;
 		}
 		String filename = args[0];
+        
+        int NF = 4, NQ = 8, ND = 4, NI = 8, NW = 4, NR = 4, NC = 4;
+        
 		Emulator emulator = new Emulator();
 		ArrayList<String> instructions = emulator.readInstructions(filename);
-		Map<Integer,Float> memory = emulator.readData(filename);     
+		Map<Integer,Float> memory = emulator.readData(filename);
+        
+        RegisterFile<Integer> intRegisters = new RegisterFile<Integer>(0);
+        RegisterFile<Float> floatRegisters = new RegisterFile<Float>((float)0);
+        Scoreboard scoreboard = new Scoreboard(intRegisters, floatRegisters);
 		
-		// Just demonstrating the Instruction class
+        FetchUnit fetchUnit = new FetchUnit(NF, NQ, instructions);
+        DecodeUnit decodeUnit = new DecodeUnit(ND, NI, fetchUnit);
+        
+        ReservationStations reservationStations = new ReservationStations(scoreboard);
+        ReorderBuffer reorderBuffer = new ReorderBuffer(NR, NC, intRegisters, floatRegisters, reservationStations, scoreboard, memory);
+        IssueUnit issueUnit = new IssueUnit(NW, decodeUnit, reservationStations, reorderBuffer, scoreboard);
+        
+        IntUnits intUnits = new IntUnits(reservationStations, reorderBuffer);
+        FPUnit fpUnit = new FPUnit(reservationStations, reorderBuffer);
+        MULTUnit multUnit = new MULTUnit(reservationStations, reorderBuffer);
+        LoadStoreUnit lsUnit = new LoadStoreUnit(reservationStations, reorderBuffer);
+        BranchUnit branchUnit = new BranchUnit(reservationStations, reorderBuffer);
+        
+        int cycles = 0;
         while(true) {
+            cycles++;
+            System.out.println("----------Cycle " + cycles + "----------");
+            
+            
+            // writeback & commit
+            System.out.println("*****Writeback & Commit");
+            reorderBuffer.cycle();
+            
+            // execution
+            System.out.println("*****Execution");
+            intUnits.cycle();
+            fpUnit.cycle();
+            multUnit.cycle();
+            lsUnit.cycle();
+            branchUnit.cycle();
+            
+            reorderBuffer.stageCommits(); // necessary for prioritizing writeback from execution units
+            
+            // issue
+            System.out.println("*****Issue");
+            issueUnit.cycle();
+            
+            // decode
+            System.out.println("*****Decode");
+            decodeUnit.cycle();
+            
+            // fetch
+            System.out.println("*****Fetch");
+            fetchUnit.cycle();
+            
+            if(cycles == 1000) {
+                break;
+            }
         }
 	}
 }

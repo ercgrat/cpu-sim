@@ -97,7 +97,7 @@ public class ReorderBuffer {
 		writtenThisCycle = 0;
     }
     
-	public void commit() { // To be called as a second "cycle()" method, after execution stations finish
+	public void stageCommits() { // To be called as a second "cycle()" method, after execution stations finish
 		int current = head;
         ROBEntry entry = ROB[current];
 		

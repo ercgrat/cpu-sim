@@ -9,15 +9,17 @@ public class MULTUnit {
     private class Unit{
         Instruction[] stages;
         boolean isWaiting;
+        
+        public Unit() {
+            stages = new Instruction[4];
+            isWaiting = false;
+        }
     }
     
     public MULTUnit(ReservationStations reservationStations, ReorderBuffer reorderBuffer){
         this.reorderBuffer = reorderBuffer;
         this.reservationStations = reservationStations;
-        this.MULT.isWaiting = false;
-        this.MULT.stages = new Instruction[4];
-        for(int i = 0; i < 4; i++)
-            this.MULT.stages[i] = null;
+        this.MULT = new Unit();
     }
     
     public void cycle(){

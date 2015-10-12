@@ -2,6 +2,17 @@ package simulator;
 
 public class BranchUnit {
 
+    private class Unit{
+        Instruction instruction;
+        int curCycle;
+        boolean isWaiting;
+        
+        public Unit() {
+            curCycle = 0;
+            isWaiting = false;
+        }
+    }
+
     private Unit BU;
     ReorderBuffer reorderBuffer;
     ReservationStations reservationStations;
@@ -9,15 +20,7 @@ public class BranchUnit {
     public BranchUnit(ReservationStations reservationStations, ReorderBuffer reorderBuffer){
         this.reorderBuffer = reorderBuffer;
         this.reservationStations = reservationStations;
-        this.BU.curCycle = 0;
-        this.BU.instruction = null;
-        this.BU.isWaiting = false;
-    }
-    
-    private class Unit{
-        Instruction instruction;
-        int curCycle;
-        boolean isWaiting;
+        this.BU = new Unit();
     }
     
     /*Returns the branch instruction if the original prediction was fasle, null otherwise*/

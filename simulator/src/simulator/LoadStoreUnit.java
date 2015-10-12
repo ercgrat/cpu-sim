@@ -6,18 +6,21 @@ public class LoadStoreUnit {
     ReorderBuffer reorderBuffer;
     ReservationStations reservationStations;
     
-    public LoadStoreUnit(ReservationStations reservationStations, ReorderBuffer reorderBuffer){
-        this.reorderBuffer = reorderBuffer;
-        this.reservationStations = reservationStations;
-        this.LSU.curCycle = 0;
-        this.LSU.instruction = null;
-        this.LSU.isWaiting = false;
-    }
-    
-    private class Unit{
+    private class Unit {
         Instruction instruction;
         int curCycle;
         boolean isWaiting;
+        
+        public Unit() {
+            curCycle = 0;
+            isWaiting = false;
+        }
+    }
+    
+    public LoadStoreUnit(ReservationStations reservationStations, ReorderBuffer reorderBuffer){
+        this.reorderBuffer = reorderBuffer;
+        this.reservationStations = reservationStations;
+        this.LSU = new Unit();
     }
     
     public void cycle(){

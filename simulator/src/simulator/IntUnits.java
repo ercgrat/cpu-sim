@@ -10,18 +10,20 @@ public class IntUnits {
         this.reorderBuffer = reorderBuffer;
         this.reservationStations = reservationStations;
         this.INTS = new Unit[2];
-        for(int i = 0; i < 2; i++){
-            this.INTS[i].curCycle = 0;
-            this.INTS[i].instruction = null;
-            this.INTS[i].isWaiting = false;
-        }
-        
+        INTS[0] = new Unit();
+        INTS[1] = new Unit();
     }
     
-    private class Unit{
+    private class Unit {
         Instruction instruction;
         int curCycle;
         boolean isWaiting;
+        
+        public Unit() {
+            instruction = null;
+            curCycle = 0;
+            isWaiting = false;
+        }
     }
     
     public void cycle(){

@@ -10,16 +10,18 @@ public class FPUnit {
         Instruction[] stages;
         boolean isWaiting;
         boolean isDividing;
+        
+        public Unit() {
+            stages = new Instruction[4];
+            isWaiting = false;
+            isDividing = false;
+        }
     }
     
     public FPUnit(ReservationStations reservationStations, ReorderBuffer reorderBuffer){
         this.reorderBuffer = reorderBuffer;
         this.reservationStations = reservationStations;
-        this.FPU.isWaiting = false;
-        this.FPU.isDividing = false;
-        this.FPU.stages = new Instruction[4];
-        for(int i = 0; i < 4; i++)
-            this.FPU.stages[i] = null;
+        this.FPU = new Unit();
     }
     
     public void cycle(){
