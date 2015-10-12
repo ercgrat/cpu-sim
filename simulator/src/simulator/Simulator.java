@@ -72,24 +72,25 @@ public class Simulator {
             System.out.println("*****Last Execution");
             reorderBuffer.stageCommits(); // necessary for prioritizing writeback from execution units
             System.out.println("*****Finished Stage Commits");
-            if(branchInstruction != null)
+            if(branchInstruction != null){
                 reorderBuffer.flush(branchInstruction);
+                decodeUnit.flush();
+                fetchUnit.flush(branchInstruction);
+            }
             System.out.println("*****Reservation Stations");
             reservationStations.cycle();
             // issue
             System.out.println("*****Issue");
-            issueUnit.cycle();
+            if(branchInstruction == null){
+                issueUnit.cycle();
             
-            // decode
-            System.out.println("*****Decode");
-            decodeUnit.cycle();
+                // decode
+                System.out.println("*****Decode");
+                decodeUnit.cycle();
             
-            // fetch
-            System.out.println("*****Fetch");
-            fetchUnit.cycle();
-            if(branchInstruction != null){
-                decodeUnit.flush();
-                fetchUnit.flush(branchInstruction);
+                // fetch
+                System.out.println("*****Fetch");
+                fetchUnit.cycle();    
             }
             if(cycles == 1000) {
                 break;
