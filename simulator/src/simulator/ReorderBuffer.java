@@ -107,16 +107,18 @@ public class ReorderBuffer {
             current = next(current);
             entry = ROB[current];
         }
-        if(entry != null)
+        if(entry != null) {
             System.out.println("Oldest instruction in ROB: " + entry.inst);
+        }
 		// Commit in order from oldest instructions, if values are ready, while bandwidth available on the CDB
         while(entry != null && entry.hasValue && writtenThisCycle < NC) {
             
             if(entry.flushFlag == false) { // Not marked for flushing
                 indexCommitQueue.add(current);
                 entryCommitQueue.add(entry);
-                System.out.println(entry.inst);
                 writtenThisCycle++;
+                System.out.println("Staged for commit: ");
+                System.out.println(entry.inst);
             }
             ROB[current] = null; // Flush whether committed or flushed
             
