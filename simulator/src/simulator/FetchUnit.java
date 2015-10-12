@@ -120,6 +120,16 @@ public class FetchUnit {
 		return dequeuedInstructions;
 	}
 	
+        public void flush(Instruction branch){
+            setBranchPrediction(branch.instructionAddress, branch.branchCondition, branch.target.intValue);
+            while(instructionQueue.size() > 0)
+                    instructionQueue.remove(0);
+            if(branch.branchCondition)
+                PC = branch.target.intValue * 4 + baseAddr;
+            else
+                PC = (branch.instructionAddress + 1) *4 + baseAddr;
+        }
+        
 	public void setBranchPrediction(int address, boolean branchCondition, Integer targetAddress) {
 		branchTable.makeEntry(address, branchCondition, targetAddress);
 	}

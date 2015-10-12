@@ -46,4 +46,9 @@ public class DecodeUnit {
 	public void dequeue() {
 		issueQueue.remove(0);
 	}
+        
+        public void flush(){
+            while(issueQueue.size() > 0)
+                issueQueue.remove(0);
+        }
 }

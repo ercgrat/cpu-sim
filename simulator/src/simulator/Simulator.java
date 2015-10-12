@@ -47,7 +47,7 @@ public class Simulator {
         MULTUnit multUnit = new MULTUnit(reservationStations, reorderBuffer);
         LoadStoreUnit lsUnit = new LoadStoreUnit(reservationStations, reorderBuffer, memory);
         BranchUnit branchUnit = new BranchUnit(reservationStations, reorderBuffer);
-        
+        Instruction branchInstruction = null;
         int cycles = 0;
         while(true) {
             cycles++;
@@ -68,10 +68,14 @@ public class Simulator {
             System.out.println("*****Execution");
             lsUnit.cycle();
             System.out.println("*****Execution");
-            branchUnit.cycle();
-            System.out.println("*****Execution");
+            branchInstruction = branchUnit.cycle();
+            System.out.println("*****Last Execution");
             reorderBuffer.stageCommits(); // necessary for prioritizing writeback from execution units
-            
+            System.out.println("*****Finished Stage Commits");
+            if(branchInstruction != null)
+                reorderBuffer.flush(branchInstruction);
+            System.out.println("*****Reservation Stations");
+            reservationStations.cycle();
             // issue
             System.out.println("*****Issue");
             issueUnit.cycle();
@@ -83,7 +87,10 @@ public class Simulator {
             // fetch
             System.out.println("*****Fetch");
             fetchUnit.cycle();
-            
+            if(branchInstruction != null){
+                decodeUnit.flush();
+                fetchUnit.flush(branchInstruction);
+            }
             if(cycles == 1000) {
                 break;
             }
