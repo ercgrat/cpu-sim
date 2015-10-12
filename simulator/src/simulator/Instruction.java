@@ -4,10 +4,10 @@ public class Instruction {
 	
 	private static final String delimiters = ", | |,"; // Split on comma space OR space or comma (order matters here; the largest delimiter needs to be first)
 	
-        int stNum;
-        int robSlot;
-        int memoryAddress;
-	int address;
+    int stNum;
+    int robSlot;
+    int memoryAddress;
+	int instructionAddress;
 	boolean branchCondition;
 	String op, unit;
 	Operand dest, src, target;
@@ -39,13 +39,13 @@ public class Instruction {
 		}
 	}
 	
-	public Instruction(String instruction, int address) {
+	public Instruction(String instruction, int instructionAddress) {
 		this.op = op(instruction);
 		this.unit = unit(instruction);
 		this.dest = dest(instruction);
 		this.src = src(instruction);
 		this.target = target(instruction);
-		this.address = address;
+		this.instructionAddress = instructionAddress;
 	}
     
 	// Returns the operation string
@@ -170,6 +170,6 @@ public class Instruction {
 	}
 	
 	public String toString() {
-		return "{ op: " + op + ", unit: " + unit + ", dest: " + dest + ", src: " + src + ", target: " + target + ", address: " + address + "}";
+		return "{ op: " + op + ", unit: " + unit + ", dest: " + dest + ", src: " + src + ", target: " + target + ", instruction address: " + instructionAddress + ", memory address: " + memoryAddress + ", stNum: " + stNum + ", robSlot: " + robSlot + ", }";
 	}
 }

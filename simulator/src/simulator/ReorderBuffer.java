@@ -34,6 +34,7 @@ public class ReorderBuffer {
     private ArrayList<Float> floatValueWriteQueue;
 	private ArrayList<Integer> indexCommitQueue;
 	private ArrayList<ROBEntry> entryCommitQueue;
+    private Map<Integer, Float> memory;
 	
     public ReorderBuffer(int NR, int NC,  RegisterFile<Integer> intRegisters,  RegisterFile<Float> floatRegisters, ReservationStations resStations, Scoreboard scoreboard, Map<Integer, Float> memory){
         this.NR = NR;
@@ -42,6 +43,7 @@ public class ReorderBuffer {
         this.floatRegisters = floatRegisters;
         this.resStations = resStations;
         this.scoreboard = scoreboard;
+        this.memory = memory;
         head = 0;
         ROB = new ROBEntry[NR];
 		
@@ -61,7 +63,7 @@ public class ReorderBuffer {
 			int robSlot = intIndexWriteQueue.get(i);
 			ROB[robSlot].hasValue = true;
             ROB[robSlot].intValue = intValueWriteQueue.get(i);
-            if(ROB[robSlot].flushFlag == false) { // Ignore instruction if set to be flushed
+            if(ROB[robSlot].flushFlag == false || ROB[robSlot].inst.unit.equals("Store")) { // Ignore instruction if set to be flushed
                 resStations.writeback(robSlot, ROB[robSlot].intValue);
                 scoreboard.writeback(robSlot);
                 writtenThisCycle++;
@@ -69,11 +71,12 @@ public class ReorderBuffer {
 		}
 		intIndexWriteQueue.clear();
 		intValueWriteQueue.clear();
+        
 		for(int i = 0; i < floatIndexWriteQueue.size(); i++) {
 			int robSlot = floatIndexWriteQueue.get(i);
 			ROB[robSlot].hasValue = true;
             ROB[robSlot].floatValue = floatValueWriteQueue.get(i);
-            if(ROB[robSlot].flushFlag == false) { // Ignore instruction if set to be flushed
+            if(ROB[robSlot].flushFlag == false || ROB[robSlot].inst.unit.equals("Store")) { // Ignore instruction if set to be flushed
                 resStations.writeback(robSlot, ROB[robSlot].floatValue);
                 scoreboard.writeback(robSlot);
                 writtenThisCycle++;
@@ -120,14 +123,27 @@ public class ReorderBuffer {
 	}
 	
     private void commit(int robSlot, ROBEntry entry) {
-        if(entry.intValue != null) {
-            intRegisters.write(entry.inst.dest.registerIndex, entry.intValue);
-            resStations.writeback(robSlot, entry.intValue);
+        if(entry.inst.unit.equals("Store")) { // For stores, write to memory
+            if(entry.intValue != null) {
+                Float floatVal = (float)entry.intValue;
+                memory.put(entry.inst.memoryAddress, floatVal);
+            } else {
+                memory.put(entry.inst.memoryAddress, entry.floatValue);
+            }
         } else {
-            floatRegisters.write(entry.inst.dest.registerIndex, entry.floatValue);
-            resStations.writeback(robSlot, entry.floatValue);
+            if(entry.intValue != null) {
+                intRegisters.write(entry.inst.dest.registerIndex, entry.intValue);
+                resStations.writeback(robSlot, entry.intValue);
+            } else {
+                floatRegisters.write(entry.inst.dest.registerIndex, entry.floatValue);
+                resStations.writeback(robSlot, entry.floatValue);
+            }
         }
         scoreboard.writeback(robSlot);
+        
+        if(entry.inst.unit.equals("Store") || entry.inst.unit.equals("Load")) { // Load/store res stations are locked until commit
+            resStations.finishedExecution(entry.inst.stNum);
+        }
     }
     
     public void flush(Instruction branch) {
