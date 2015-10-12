@@ -39,12 +39,13 @@ public class Simulator {
         
         ReservationStations reservationStations = new ReservationStations(scoreboard);
         ReorderBuffer reorderBuffer = new ReorderBuffer(NR, NC, intRegisters, floatRegisters, reservationStations, scoreboard, memory);
+        reservationStations.reorderBufferInit(reorderBuffer);
         IssueUnit issueUnit = new IssueUnit(NW, decodeUnit, reservationStations, reorderBuffer, scoreboard);
         
         IntUnits intUnits = new IntUnits(reservationStations, reorderBuffer);
         FPUnit fpUnit = new FPUnit(reservationStations, reorderBuffer);
         MULTUnit multUnit = new MULTUnit(reservationStations, reorderBuffer);
-        LoadStoreUnit lsUnit = new LoadStoreUnit(reservationStations, reorderBuffer);
+        LoadStoreUnit lsUnit = new LoadStoreUnit(reservationStations, reorderBuffer, memory);
         BranchUnit branchUnit = new BranchUnit(reservationStations, reorderBuffer);
         
         int cycles = 0;
@@ -60,11 +61,15 @@ public class Simulator {
             // execution
             System.out.println("*****Execution");
             intUnits.cycle();
+            System.out.println("*****Execution");
             fpUnit.cycle();
+            System.out.println("*****Execution");
             multUnit.cycle();
+            System.out.println("*****Execution");
             lsUnit.cycle();
+            System.out.println("*****Execution");
             branchUnit.cycle();
-            
+            System.out.println("*****Execution");
             reorderBuffer.stageCommits(); // necessary for prioritizing writeback from execution units
             
             // issue

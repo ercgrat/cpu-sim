@@ -55,7 +55,7 @@ public class BranchUnit {
                 BU.instruction.branchCondition = branchOutcome;
                 returnInstruction = BU.instruction;
             }
-            if(/*ROB function to write branch here*/true){
+            if(reorderBuffer.write(BU.instruction.robSlot, 0)){
                 BU.curCycle = 0;
                 reservationStations.finishedExecution(BU.instruction.stNum);
             }
@@ -64,7 +64,7 @@ public class BranchUnit {
             }
         }
         else{
-            if(/*ROB function to write branch here*/true){
+            if(reorderBuffer.write(BU.instruction.robSlot, 0)){
                 BU.curCycle = 0;
                 BU.isWaiting = false;
                 reservationStations.finishedExecution(BU.instruction.stNum);

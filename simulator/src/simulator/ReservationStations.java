@@ -11,9 +11,11 @@ public class ReservationStations {
     private final int numStations = 19;
     private Station[] Stations;
     private Scoreboard scoreboard;
+    private ReorderBuffer reorderBuffer;
     
     public ReservationStations(Scoreboard scoreboard){
         Stations = new Station[numStations];
+        this.scoreboard = scoreboard;
         for(int i = 0; i < numStations; i++){
             Stations[i] = new Station();
             if(i<2)
@@ -32,6 +34,10 @@ public class ReservationStations {
                 Stations[i].unit = "BU";
             
         }
+    }
+    
+    public void reorderBufferInit(ReorderBuffer reorderBuffer){
+        this.reorderBuffer = reorderBuffer;
     }
     
     public class Station{
@@ -156,7 +162,7 @@ public class ReservationStations {
                     earliest = stNums[0];
                 for(int i = 1; i < readyCounter; i++){
                    //Check from rob which of the two slots is for earlier instruction 
-                    if(/*ROB.check(Stations[earliest].instruction.robSlot,robSlots[i])*/false)
+                    if(reorderBuffer.isBefore(Stations[stNums[i]].instruction, Stations[earliest].instruction))
                         earliest = stNums[i];
                 }
                 return earliest;
