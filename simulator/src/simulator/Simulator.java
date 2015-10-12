@@ -23,14 +23,12 @@ public class Simulator {
 			return;
 		}
 		String filename = args[0];
-		emulator Emulator = new emulator();
-		ArrayList<String> instructions = Emulator.readInstructions(filename);
-		Map<Integer,Float> memory = Emulator.readData(filename);     
+		Emulator emulator = new Emulator();
+		ArrayList<String> instructions = emulator.readInstructions(filename);
+		Map<Integer,Float> memory = emulator.readData(filename);     
 		
 		// Just demonstrating the Instruction class
-		for(String inst : instructions) {
-			Instruction test = new Instruction(inst, 0);
-			System.out.println(test);
-		}
+        while(true) {
+        }
 	}
 }

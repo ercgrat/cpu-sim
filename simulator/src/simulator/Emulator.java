@@ -18,7 +18,7 @@ import java.util.Map;
  *
  * @author zaeem
  */
-public class emulator {
+public class Emulator {
     
     public ArrayList<String> readInstructions(String fileName) throws IOException{
         ArrayList<String> instructions=new ArrayList<String>();
