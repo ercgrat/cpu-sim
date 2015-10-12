@@ -274,12 +274,42 @@ public class ReservationStations {
         }
     }
     
+    public void setInstructionMemoryAddress(int stNum, int memoryAddress){
+        Stations[stNum].instruction.memoryAddress = memoryAddress;
+    }
+    
+    public int checkMemoryAddress(int memoryAddress){
+        int stNum = -1;
+        for(int i=9;i<12;i++){
+            if(Stations[i].instruction != null && Stations[i].instruction.memoryAddress == memoryAddress)
+                stNum = i;
+        }
+        return stNum;
+    }
+    
+    public float getFloatValue(int stNum){
+        return Stations[stNum].instruction.dest.floatValue;
+    }
+    
+    public int getIntValue(int stNum){
+        return Stations[stNum].instruction.dest.intValue;
+    }
+    
+    public void setInstructionDest(int stNum, float val){
+        Stations[stNum].instruction.dest.floatValue = val;
+    }
+    
+    public void setInstructionDest(int stNum, int val){
+        Stations[stNum].instruction.dest.intValue = val;
+    }
+    
     public void reserveStation(int i, Instruction instruction, int robSlot){
         Stations[i].isFree = false;
         Stations[i].finishedExec = false;
         Stations[i].instruction = instruction;
         Stations[i].instruction.robSlot = robSlot;
         Stations[i].instruction.stNum = i;
+        Stations[i].instruction.memoryAddress = -1;
         // Gets register values if available
         scoreboard.loadOp(instruction.src);
         scoreboard.loadOp(instruction.target);

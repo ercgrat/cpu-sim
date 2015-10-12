@@ -44,13 +44,22 @@ public class LoadStoreUnit {
         }
         else if(!LSU.isWaiting){
             LSU.instruction.memoryAddress = LSU.instruction.src.intValue + LSU.instruction.target.intValue;
+            reservationStations.setInstructionMemoryAddress(LSU.instruction.stNum, LSU.instruction.memoryAddress);
             if("Store".equals(LSU.instruction.unit)){
-                if("S.D".equals(LSU.instruction.op) && reorderBuffer.write(LSU.instruction.robSlot, LSU.instruction.dest.floatValue))
-                    LSU.curCycle = 0;
-                else if("SD".equals(LSU.instruction.op) && reorderBuffer.write(LSU.instruction.robSlot, LSU.instruction.dest.intValue))
-                    LSU.curCycle = 0;
-                else
-                    LSU.isWaiting = true;
+                if("S.D".equals(LSU.instruction.op)){
+                    reservationStations.setInstructionDest(LSU.instruction.stNum, LSU.instruction.dest.floatValue);
+                    if(reorderBuffer.write(LSU.instruction.robSlot, LSU.instruction.dest.floatValue))
+                        LSU.curCycle = 0;
+                    else
+                        LSU.isWaiting = true;
+                }
+                else if("SD".equals(LSU.instruction.op)){
+                    reservationStations.setInstructionDest(LSU.instruction.stNum, LSU.instruction.dest.intValue);
+                    if(reorderBuffer.write(LSU.instruction.robSlot, LSU.instruction.dest.intValue))
+                        LSU.curCycle = 0;
+                    else
+                        LSU.isWaiting = true;
+                }
             }
             else{
                 if(memoryInst != null){
@@ -84,16 +93,17 @@ public class LoadStoreUnit {
     
     private void memoryAccess(){
         if(memoryInst != null && !isMemInstWaiting){
-            if(true/*reorderBuffer.isMemoryAddressInROB(memoryInst.memoryAddress)*/){
+            int memStNum = reservationStations.checkMemoryAddress(memoryInst.memoryAddress);
+            if(memStNum != -1){
                 if("L.D".equals(memoryInst.op)){
-                    /*memoryInst.dest.floatValue=reorderBuffer.getValueOfGivenAddress(memoryInst.memoryAddress);*/
+                    memoryInst.dest.floatValue=reservationStations.getFloatValue(memStNum);
                     if(reorderBuffer.write(memoryInst.robSlot, memoryInst.dest.floatValue))
                         memoryInst = null;
                     else
                         isMemInstWaiting = true;
                 }
                 else{
-                    /*memoryInst.dest.intValue=Integer.valueOf(reorderBuffer.getValueOfGivenAddress(memoryInst.memoryAddress));*/
+                    memoryInst.dest.intValue=reservationStations.getIntValue(memStNum);
                     if(reorderBuffer.write(memoryInst.robSlot, memoryInst.dest.intValue))
                         memoryInst = null;
                     else
