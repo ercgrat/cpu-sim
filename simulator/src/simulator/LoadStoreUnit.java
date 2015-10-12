@@ -62,7 +62,7 @@ public class LoadStoreUnit {
                 }
             }
             else{
-                if(memoryInst != null){
+                if(memoryInst == null){
                     memoryInst = LSU.instruction;
                     LSU.curCycle = 0;
                 }
@@ -82,7 +82,7 @@ public class LoadStoreUnit {
                 }
             }
             else{
-                if(memoryInst != null){
+                if(memoryInst == null){
                     memoryInst = LSU.instruction;
                     LSU.curCycle = 0;
                     LSU.isWaiting = false;
