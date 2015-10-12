@@ -278,13 +278,27 @@ public class ReservationStations {
         Stations[stNum].instruction.memoryAddress = memoryAddress;
     }
     
-    public int checkMemoryAddress(int memoryAddress){
-        int stNum = -1;
+    public int checkMemoryAddress(int memoryAddress, int loadStNum){
+        int[] stNums = new int[3];
+        int counter = 0;
         for(int i=9;i<12;i++){
-            if(Stations[i].instruction != null && Stations[i].instruction.memoryAddress == memoryAddress)
-                stNum = i;
+            if(Stations[i].instruction != null && Stations[i].instruction.memoryAddress == memoryAddress && reorderBuffer.isBefore(Stations[i].instruction, Stations[loadStNum].instruction)){
+                stNums[counter] = i;
+                counter++;
+            }
         }
-        return stNum;
+        if(counter == 0)
+            return -1;
+        else if(counter == 1)
+            return stNums[0];
+        else{
+            Instruction candidate = Stations[stNums[0]].instruction;
+            for(int i = 1; i < counter; i++){
+                if(reorderBuffer.isBefore(candidate, Stations[stNums[i]].instruction))
+                    candidate = Stations[stNums[i]].instruction;
+            }
+            return candidate.stNum;
+        }
     }
     
     public float getFloatValue(int stNum){

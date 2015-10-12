@@ -93,7 +93,7 @@ public class LoadStoreUnit {
     
     private void memoryAccess(){
         if(memoryInst != null && !isMemInstWaiting){
-            int memStNum = reservationStations.checkMemoryAddress(memoryInst.memoryAddress);
+            int memStNum = reservationStations.checkMemoryAddress(memoryInst.memoryAddress, memoryInst.stNum);
             if(memStNum != -1){
                 if("L.D".equals(memoryInst.op)){
                     memoryInst.dest.floatValue=reservationStations.getFloatValue(memStNum);
