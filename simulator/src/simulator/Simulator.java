@@ -49,7 +49,7 @@ public class Simulator {
         BranchUnit branchUnit = new BranchUnit(reservationStations, reorderBuffer);
         Instruction branchInstruction = null;
         int cycles = 0;
-        int countdown = 30;
+        int countdown = 40;
         boolean readingInstructions = true;
         while(true) {
             cycles++;
