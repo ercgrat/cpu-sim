@@ -49,12 +49,13 @@ public class Simulator {
         BranchUnit branchUnit = new BranchUnit(reservationStations, reorderBuffer);
         Instruction branchInstruction = null;
         int cycles = 0;
-        int countdown = 40;
+        int countdown = 60;
         boolean readingInstructions = true;
         while(true) {
             cycles++;
             System.out.println("----------Cycle " + cycles + "----------");
-            
+            System.out.println("Int registers: " + intRegisters);
+			System.out.println("Int registers: " + floatRegisters);
             
             // writeback & commit
             System.out.println("*****Writeback & Commit");

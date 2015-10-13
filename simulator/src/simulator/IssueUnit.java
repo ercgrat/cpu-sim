@@ -33,7 +33,9 @@ public class IssueUnit {
                 if(stNum != -1 && reorderBuffer.hasSlot()){
                     int robSlot = reorderBuffer.reserveSlot(nextInst);
                     reservationStations.reserveStation(stNum, nextInst, robSlot);
-					scoreboard.rename(nextInst.dest, robSlot);
+					if(!(nextInst.unit.equals("BU") || nextInst.unit.equals("Store"))) {
+						scoreboard.rename(nextInst.dest, robSlot);
+					}
                     decodeUnit.dequeue();
                     //System.out.println("Issued: " + nextInst);
                 }

@@ -163,8 +163,9 @@ public class ReservationStations {
                         readyCounter++;
                     }
                 }
-                if(readyCounter > 0)
+                if(readyCounter > 0) {
                     earliest = stNums[0];
+				}
                 for(int i = 1; i < readyCounter; i++){
                    //Check from rob which of the two slots is for earlier instruction 
                     if(reorderBuffer.isBefore(Stations[stNums[i]].instruction, Stations[earliest].instruction))
@@ -253,7 +254,7 @@ public class ReservationStations {
     public void writeback(int robSlot, Float val) {
         for(int i = 0; i < numStations; i++) {
             if(Stations[i].isWaiting) {
-                if(Stations[i].srcName >= 0) {
+                if(Stations[i].srcName >= 0  && Stations[i].destName < 0) {
                     if(Stations[i].targetName >= 0) { // both source and target are waiting
                         if(Stations[i].srcName == robSlot) { // if source matches writeback slot, read value
                             Stations[i].instruction.src.floatValue = val;
@@ -266,20 +267,40 @@ public class ReservationStations {
                         // done waiting if both operands match the writeback slot
                         if(Stations[i].srcName == robSlot && Stations[i].targetName == robSlot) {
                             Stations[i].isWaiting = false;
-                            System.out.println("Station "+i+" is not waiting");
+                            System.out.println("Stations "+i+" is not waiting");
                         }
                     } else { // just source is waiting
                         if(Stations[i].srcName == robSlot) { // source matches the writeback slot, done waiting
                             Stations[i].instruction.src.floatValue = val;
                             Stations[i].isWaiting = false;
-                            System.out.println("Station "+i+" is not waiting");
+                            System.out.println("Stations "+i+" is not waiting");
                         }
                     }
-                } else { // just target is waiting
+                } else if(Stations[i].destName < 0){ // just target is waiting
                     if(Stations[i].targetName == robSlot) { // target matches the writeback slot, done waiting
                         Stations[i].instruction.target.floatValue = val;
                         Stations[i].isWaiting = false;
-                        System.out.println("Station "+i+" is not waiting");
+                        System.out.println("Stations "+i+" is not waiting");
+                    }
+                } else if(Stations[i].srcName >= 0  && Stations[i].destName >= 0){
+                    if(Stations[i].srcName == robSlot) { // if source matches writeback slot, read value
+                        Stations[i].instruction.src.floatValue = val;
+                        Stations[i].srcName = -1;
+                    }
+                    if(Stations[i].destName == robSlot) {
+                        Stations[i].instruction.dest.floatValue = val;
+                        Stations[i].destName = -1;
+                    }
+                    // done waiting if both operands match the writeback slot
+                    if(Stations[i].srcName == robSlot && Stations[i].destName == robSlot) {
+                        Stations[i].isWaiting = false;
+                        System.out.println("Stations "+i+" is not waiting");
+                    }
+                } else{
+                    if(Stations[i].destName == robSlot) { // Dest matches the writeback slot, done waiting
+                        Stations[i].instruction.dest.floatValue = val;
+                        Stations[i].isWaiting = false;
+                        System.out.println("Stations "+i+" is not waiting");
                     }
                 }
             }
@@ -345,7 +366,7 @@ public class ReservationStations {
         scoreboard.loadOp(instruction.target);
         Stations[i].destName = -1;
         
-        if(instruction.op.startsWith("B", 0) || instruction.op.startsWith("S", 0)){
+        if(instruction.op.startsWith("B", 0) || instruction.op.startsWith("S", 0)) {
             scoreboard.loadOp(instruction.dest);
             Stations[i].destName = scoreboard.getName(instruction.dest);
             if(Stations[i].destName != -1){

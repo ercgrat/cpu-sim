@@ -63,7 +63,7 @@ public class ReorderBuffer {
 			int robSlot = intIndexWriteQueue.get(i);
 			ROB[robSlot].hasValue = true;
             ROB[robSlot].intValue = intValueWriteQueue.get(i);
-            if(ROB[robSlot].flushFlag == false || ROB[robSlot].inst.unit.equals("Store")) { // Ignore instruction if set to be flushed
+            if(ROB[robSlot].flushFlag == false && !ROB[robSlot].inst.unit.equals("Store") && !ROB[robSlot].inst.unit.equals("BU")) { // Ignore instruction if set to be flushed
                 resStations.writeback(robSlot, ROB[robSlot].intValue);
                 scoreboard.writeback(robSlot);
                 writtenThisCycle++;
@@ -77,7 +77,7 @@ public class ReorderBuffer {
 			int robSlot = floatIndexWriteQueue.get(i);
 			ROB[robSlot].hasValue = true;
             ROB[robSlot].floatValue = floatValueWriteQueue.get(i);
-            if(ROB[robSlot].flushFlag == false || ROB[robSlot].inst.unit.equals("Store")) { // Ignore instruction if set to be flushed
+            if(ROB[robSlot].flushFlag == false && !ROB[robSlot].inst.unit.equals("Store") && !ROB[robSlot].inst.unit.equals("BU")) { // Ignore instruction if set to be flushed
                 resStations.writeback(robSlot, ROB[robSlot].floatValue);
                 scoreboard.writeback(robSlot);
                 writtenThisCycle++;
@@ -109,17 +109,19 @@ public class ReorderBuffer {
         }
         if(entry != null) {
             System.out.println("Oldest instruction in ROB: " + entry.inst);
+			System.out.println(entry.hasValue);
         }
 		// Commit in order from oldest instructions, if values are ready, while bandwidth available on the CDB
         while(entry != null && entry.hasValue && writtenThisCycle < NC) {
-            
             if(entry.flushFlag == false) { // Not marked for flushing
                 indexCommitQueue.add(current);
                 entryCommitQueue.add(entry);
                 writtenThisCycle++;
                 System.out.println("Staged for commit: ");
                 System.out.println(entry.inst);
-            }
+            } else {
+				
+			}
             ROB[current] = null; // Flush whether committed or flushed
             
             // Go to next oldest entry
@@ -129,7 +131,9 @@ public class ReorderBuffer {
 	}
 	
     private void commit(int robSlot, ROBEntry entry) {
-        if(entry.inst.unit.equals("Store")) { // For stores, write to memory
+		if(entry.inst.unit.equals("BU")) {
+			// Do nothing
+		} else if(entry.inst.unit.equals("Store")) { // For stores, write to memory
             if(entry.intValue != null) {
                 Float floatVal = (float)entry.intValue;
                 memory.put(entry.inst.memoryAddress, floatVal);
@@ -155,18 +159,12 @@ public class ReorderBuffer {
     }
     
     public void flush(Instruction branch) {
-        int current = previous();
-        ROBEntry entry = ROB[current];
-        while(true) {
-            if(entry.inst == branch) {
-                int flushIndex = next(current);
-                while(flushIndex != head) {
-                    ROB[flushIndex].flushFlag = true;
-                    flushIndex = next(flushIndex);
-                }
-                break;
-            }
-        }
+        int flushIndex = next(branch.robSlot);
+        ROBEntry entry = ROB[flushIndex];
+		while(flushIndex != head) {
+			ROB[flushIndex].flushFlag = true;
+			flushIndex = next(flushIndex);
+		}
     }
     
     public boolean hasSlot() {
@@ -187,7 +185,11 @@ public class ReorderBuffer {
     
     public boolean write(int index, Integer val) {
         System.out.println("Staged writeback of " + val + " to ROB slot " + index + ".");
-        if(writtenThisCycle < NC && index >= 0 && index < NR && val != null) {
+		if(val == null) {
+			return true;
+		}
+		
+        if(writtenThisCycle < NC && index >= 0 && index < NR) {
 			intIndexWriteQueue.add(index);
 			intValueWriteQueue.add(val);
 			writtenThisCycle++;
@@ -199,7 +201,11 @@ public class ReorderBuffer {
     
     public boolean write(int index, Float val) {
         System.out.println("Staged writeback of " + val + " to ROB slot " + index + ".");
-        if(writtenThisCycle < NC && index >= 0 && index < NR && val != null) {
+		if(val == null) {
+			return true;
+		}
+		
+        if(writtenThisCycle < NC && index >= 0 && index < NR) {
 			floatIndexWriteQueue.add(index);
 			floatValueWriteQueue.add(val);
 			writtenThisCycle++;
