@@ -35,7 +35,7 @@ public class IssueUnit {
                     scoreboard.rename(nextInst.dest, robSlot);
                     reservationStations.reserveStation(stNum, nextInst, robSlot);
                     decodeUnit.dequeue();
-                    System.out.println("Issued: " + nextInst);
+                    //System.out.println("Issued: " + nextInst);
                 }
                 else
                     break;

@@ -26,6 +26,10 @@ public class FPUnit {
     
     public void cycle(){
         int stNum = reservationStations.isReady("FPU");
+        System.out.println("FPU first stage instruction is: "+FPU.stages[0]);
+        System.out.println("FPU second stage instruction is: "+FPU.stages[1]);
+        System.out.println("FPU third stage instruction is: "+FPU.stages[2]);
+        System.out.println("FPU last stage instruction is: "+FPU.stages[3]);
         if(FPU.stages[3] != null){
             if(!FPU.isWaiting){
                 switch(FPU.stages[3].op){

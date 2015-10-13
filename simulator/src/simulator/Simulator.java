@@ -71,6 +71,7 @@ public class Simulator {
             lsUnit.cycle();
             System.out.println("*****Execution BRANCH");
             branchInstruction = branchUnit.cycle();
+            System.out.println("Branch outcome is:" + branchInstruction);
             System.out.println("*****Stage Commits");
             reorderBuffer.stageCommits(); // necessary for prioritizing writeback from execution units
             if(branchInstruction != null){
