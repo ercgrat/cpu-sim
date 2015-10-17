@@ -137,11 +137,11 @@ public class FetchUnit {
 		targetAddress = targetAddress * 4 + baseAddr;
 		branchTable.makeEntry(branch.instructionAddress, branch.branchCondition, targetAddress);
 		
-		while(instructionQueue.size() > 0)
-				instructionQueue.remove(0);
+		instructionQueue.clear();
+        cacheLine.clear();
 		if(branch.branchCondition)
 			PC = targetAddress;
 		else
-			PC = (branch.instructionAddress + 1) *4 + baseAddr;
+			PC = (branch.instructionAddress + 1)*4 + baseAddr;
 	}
 }

@@ -64,6 +64,9 @@ public class ReorderBuffer {
 			ROB[robSlot].hasValue = true;
             ROB[robSlot].intValue = intValueWriteQueue.get(i);
             if(!ROB[robSlot].inst.unit.equals("Store") && !ROB[robSlot].inst.unit.equals("BU")) { // Ignore instruction if set to be flushed
+                if(ROB[robSlot].flushFlag == true && ROB[robSlot].intValue == null) {
+                    ROB[robSlot].intValue = 0; // prevent null values even for meaningless flushed instructions
+                }
                 resStations.writeback(robSlot, ROB[robSlot].intValue);
                 writtenThisCycle++;
             }
@@ -77,6 +80,9 @@ public class ReorderBuffer {
 			ROB[robSlot].hasValue = true;
             ROB[robSlot].floatValue = floatValueWriteQueue.get(i);
             if(!ROB[robSlot].inst.unit.equals("Store") && !ROB[robSlot].inst.unit.equals("BU")) { // Ignore instruction if set to be flushed
+                if(ROB[robSlot].flushFlag == true && ROB[robSlot].floatValue == null) {
+                    ROB[robSlot].floatValue = (float)0; // prevent null values even for meaningless flushed instructions
+                }
                 resStations.writeback(robSlot, ROB[robSlot].floatValue);
                 writtenThisCycle++;
             }
