@@ -63,7 +63,7 @@ public class ReorderBuffer {
 			int robSlot = intIndexWriteQueue.get(i);
 			ROB[robSlot].hasValue = true;
             ROB[robSlot].intValue = intValueWriteQueue.get(i);
-            if(ROB[robSlot].flushFlag == false && !ROB[robSlot].inst.unit.equals("Store") && !ROB[robSlot].inst.unit.equals("BU")) { // Ignore instruction if set to be flushed
+            if(!ROB[robSlot].inst.unit.equals("Store") && !ROB[robSlot].inst.unit.equals("BU")) { // Ignore instruction if set to be flushed
                 resStations.writeback(robSlot, ROB[robSlot].intValue);
                 writtenThisCycle++;
             }
@@ -76,7 +76,7 @@ public class ReorderBuffer {
 			int robSlot = floatIndexWriteQueue.get(i);
 			ROB[robSlot].hasValue = true;
             ROB[robSlot].floatValue = floatValueWriteQueue.get(i);
-            if(ROB[robSlot].flushFlag == false && !ROB[robSlot].inst.unit.equals("Store") && !ROB[robSlot].inst.unit.equals("BU")) { // Ignore instruction if set to be flushed
+            if(!ROB[robSlot].inst.unit.equals("Store") && !ROB[robSlot].inst.unit.equals("BU")) { // Ignore instruction if set to be flushed
                 resStations.writeback(robSlot, ROB[robSlot].floatValue);
                 writtenThisCycle++;
             }
@@ -108,6 +108,7 @@ public class ReorderBuffer {
         if(entry != null) {
             System.out.println("Oldest instruction in ROB: " + entry.inst);
 			System.out.println(entry.hasValue);
+            System.out.println("Flush flag is: " + entry.flushFlag);
         }
 		// Commit in order from oldest instructions, if values are ready, while bandwidth available on the CDB
         while(entry != null && entry.hasValue && writtenThisCycle < NC) {
@@ -118,6 +119,7 @@ public class ReorderBuffer {
                 System.out.println("Staged for commit: ");
                 System.out.println(entry.inst);
             } else { // Flush
+                System.out.println("Flushing from ROB slot " + current);
                 scoreboard.writeback(current);
                 ROB[current] = null;
             }
@@ -159,8 +161,10 @@ public class ReorderBuffer {
     
     public void flush(Instruction branch) {
         int flushIndex = next(branch.robSlot);
+        System.out.println("Branch rob slot for flushing: " + branch.robSlot);
         ROBEntry entry = ROB[flushIndex];
 		while(flushIndex != head) {
+            System.out.println("Setting flush flag to true for: " + ROB[flushIndex].inst);
 			ROB[flushIndex].flushFlag = true;
 			flushIndex = next(flushIndex);
 		}
@@ -184,6 +188,7 @@ public class ReorderBuffer {
     
     public boolean write(int index, Integer val) {
         System.out.println("Staged writeback of " + val + " to ROB slot " + index + ".");
+        System.out.println(ROB[index].inst);
 		/*if(val == null) {
 			return true;
 		}*/
@@ -200,6 +205,7 @@ public class ReorderBuffer {
     
     public boolean write(int index, Float val) {
         System.out.println("Staged writeback of " + val + " to ROB slot " + index + ".");
+        System.out.println(ROB[index].inst);
 		/*if(val == null) {
 			return true;
 		}*/
@@ -227,6 +233,10 @@ public class ReorderBuffer {
             entry = ROB[current];
         }
         return false;
+    }
+    
+    public boolean isSetToBeFlushed(Instruction i) {
+        return ROB[i.robSlot].flushFlag;
     }
     
     private int next() {

@@ -77,9 +77,11 @@ public class Simulator {
             reorderBuffer.stageCommits(); // necessary for prioritizing writeback from execution units
             if(branchInstruction != null){
                 System.out.println("*****Branch - flush pipeline");
-                reorderBuffer.flush(branchInstruction);
-                decodeUnit.flush();
-                fetchUnit.flush(branchInstruction);
+                if(!reorderBuffer.isSetToBeFlushed(branchInstruction)) {
+                    reorderBuffer.flush(branchInstruction);
+                    decodeUnit.flush();
+                    fetchUnit.flush(branchInstruction);
+                }
             }
             System.out.println("*****Reservation Stations");
             reservationStations.cycle();
@@ -97,7 +99,7 @@ public class Simulator {
                 readingInstructions = fetchUnit.cycle();
             }
             scoreboard.cycle();
-            if(true) {
+            if(readingInstructions) {
                 countdown--;
                 if(countdown == 0) {
                     break;
