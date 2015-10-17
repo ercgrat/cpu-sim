@@ -65,7 +65,6 @@ public class ReorderBuffer {
             ROB[robSlot].intValue = intValueWriteQueue.get(i);
             if(ROB[robSlot].flushFlag == false && !ROB[robSlot].inst.unit.equals("Store") && !ROB[robSlot].inst.unit.equals("BU")) { // Ignore instruction if set to be flushed
                 resStations.writeback(robSlot, ROB[robSlot].intValue);
-                scoreboard.writeback(robSlot);
                 writtenThisCycle++;
             }
 		}
@@ -79,7 +78,6 @@ public class ReorderBuffer {
             ROB[robSlot].floatValue = floatValueWriteQueue.get(i);
             if(ROB[robSlot].flushFlag == false && !ROB[robSlot].inst.unit.equals("Store") && !ROB[robSlot].inst.unit.equals("BU")) { // Ignore instruction if set to be flushed
                 resStations.writeback(robSlot, ROB[robSlot].floatValue);
-                scoreboard.writeback(robSlot);
                 writtenThisCycle++;
             }
 		}
@@ -119,10 +117,10 @@ public class ReorderBuffer {
                 writtenThisCycle++;
                 System.out.println("Staged for commit: ");
                 System.out.println(entry.inst);
-            } else {
-				
-			}
-            ROB[current] = null; // Flush whether committed or flushed
+            } else { // Flush
+                scoreboard.writeback(current);
+                ROB[current] = null;
+            }
             
             // Go to next oldest entry
             current = next(current);
@@ -149,6 +147,7 @@ public class ReorderBuffer {
                 resStations.writeback(robSlot, entry.floatValue);
             }
         }
+        ROB[robSlot] = null; // Flush
         scoreboard.writeback(robSlot);
         System.out.println(intRegisters);
         System.out.println(floatRegisters);

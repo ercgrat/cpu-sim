@@ -1,16 +1,12 @@
 ----------Cycle 1----------
 Int registers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: []
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
@@ -21,19 +17,16 @@ Branch outcome is:null
 *****Issue
 *****Decode
 *****Fetch
+-1 -1 -1 -1 -1
 ----------Cycle 2----------
 Int registers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: []
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
@@ -45,22 +38,19 @@ Branch outcome is:null
 *****Decode
 Decode: { op: ORI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 24, floatValue: null, RegIndex: null, RegType: null }, instruction address: 1, memory address: 0, stNum: 0, robSlot: 0, }
 Decode: { op: ORI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 124, floatValue: null, RegIndex: null, RegType: null }, instruction address: 2, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 200, floatValue: null, RegIndex: null, RegType: null }, instruction address: 3, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: ORI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, instruction address: 3, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: ORI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 24, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 0, stNum: 0, robSlot: 0, }
 *****Fetch
+-1 -1 -1 -1 -1
 ----------Cycle 3----------
 Int registers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: []
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
@@ -73,30 +63,26 @@ Station 0 reserved by instruction:{ op: ORI, unit: INT, dest: { intValue: null, 
 Station 0 status is: srcName:-1,destName:-1,targetName:-1
 Station 1 reserved by instruction:{ op: ORI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 124, floatValue: null, RegIndex: null, RegType: null }, instruction address: 2, memory address: -1, stNum: 1, robSlot: 1, }
 Station 1 status is: srcName:-1,destName:-1,targetName:-1
-Station 6 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 200, floatValue: null, RegIndex: null, RegType: null }, instruction address: 3, memory address: -1, stNum: 6, robSlot: 2, }
-Station 6 status is: srcName:-1,destName:-1,targetName:-1
-Station 7 is waiting
-Station 7 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: -1, stNum: 7, robSlot: 3, }
-Station 7 status is: srcName:0,destName:-1,targetName:-1
+Station 2 reserved by instruction:{ op: ORI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, instruction address: 3, memory address: -1, stNum: 2, robSlot: 2, }
+Station 2 status is: srcName:-1,destName:-1,targetName:-1
+Station 3 reserved by instruction:{ op: ORI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 24, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: -1, stNum: 3, robSlot: 3, }
+Station 3 status is: srcName:-1,destName:-1,targetName:-1
 *****Decode
-Decode: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: ORI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 224, floatValue: null, RegIndex: null, RegType: null }, instruction address: 5, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 1, RegType: FLOAT }, instruction address: 7, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 0, stNum: 0, robSlot: 0, }
 *****Fetch
+0 1 2 3 -1
 ----------Cycle 4----------
 Int registers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: []
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
@@ -104,29 +90,19 @@ Memory Instruction is:null
 Branch outcome is:null
 *****Stage Commits
 Oldest instruction in ROB: { op: ORI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 24, floatValue: null, RegIndex: null, RegType: null }, instruction address: 1, memory address: -1, stNum: 0, robSlot: 0, }
+false
 *****Reservation Stations
 *****Issue
-Station 12 is waiting
-Station 12 reserved by instruction:{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 4, }
-Station 12 status is: srcName:3,destName:-1,targetName:2
-Station 8 is waiting
-Station 8 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: -1, stNum: 8, robSlot: 5, }
-Station 8 status is: srcName:1,destName:-1,targetName:-1
-Station 13 is waiting
-Station 13 reserved by instruction:{ op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 6, }
-Station 13 status is: srcName:4,destName:-1,targetName:5
-Station 9 is waiting
-Station 9 is waiting
-Station 9 reserved by instruction:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: -1, stNum: 9, robSlot: 7, }
-Station 9 status is: srcName:1,destName:6,targetName:-1
 *****Decode
-Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: 5, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 12, memory address: 0, stNum: 0, robSlot: 0, }
 *****Fetch
+0 1 2 3 -1
 ----------Cycle 5----------
 Int registers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: []
@@ -134,11 +110,9 @@ Commit queue: []
 *****Execution INT
 Staged writeback of 24 to ROB slot 0.
 Freed reservation station.
+Staged writeback of 3 to ROB slot 2.
+Freed reservation station.
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
@@ -146,67 +120,67 @@ Memory Instruction is:null
 Branch outcome is:null
 *****Stage Commits
 Oldest instruction in ROB: { op: ORI, unit: INT, dest: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 24, floatValue: null, RegIndex: null, RegType: null }, instruction address: 1, memory address: -1, stNum: 0, robSlot: 0, }
+false
 *****Reservation Stations
 *****Issue
-Station 2 is waiting
-Station 2 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: -1, stNum: 2, robSlot: 8, }
-Station 2 status is: srcName:0,destName:-1,targetName:-1
-Station 3 is waiting
-Station 3 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: -1, stNum: 3, robSlot: 9, }
-Station 3 status is: srcName:1,destName:-1,targetName:-1
-Station 17 is waiting
-Station 17 reserved by instruction:{ op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 10, }
-Station 17 status is: srcName:-1,destName:8,targetName:-1
 *****Decode
 *****Fetch
+0 1 2 3 -1
 ----------Cycle 6----------
 Int registers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
-Int write queue: [0]
-Stations 2 is not waiting
-Stations 7 is not waiting
+Int write queue: [0, 2]
 Float write queue: []
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
-Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 200, floatValue: null, RegIndex: null, RegType: null }, instruction address: 3, memory address: 200, stNum: 6, robSlot: 2, }
-Staged writeback of 2.0 to ROB slot 2.
+Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
 Oldest instruction in ROB: { op: ORI, unit: INT, dest: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 24, floatValue: null, RegIndex: null, RegType: null }, instruction address: 1, memory address: -1, stNum: 0, robSlot: 0, }
+true
 Staged for commit: 
 { op: ORI, unit: INT, dest: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 24, floatValue: null, RegIndex: null, RegType: null }, instruction address: 1, memory address: -1, stNum: 0, robSlot: 0, }
 *****Reservation Stations
 *****Issue
+Station 0 reserved by instruction:{ op: ORI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 224, floatValue: null, RegIndex: null, RegType: null }, instruction address: 5, memory address: -1, stNum: 0, robSlot: 4, }
+Station 0 status is: srcName:-1,destName:-1,targetName:-1
+Station 6 is waiting
+Station 6 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: -1, stNum: 6, robSlot: 5, }
+Station 6 status is: srcName:4,destName:-1,targetName:-1
+Station 12 is waiting
+Station 12 reserved by instruction:{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 0.0, RegIndex: 1, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 12, robSlot: 6, }
+Station 12 status is: srcName:5,destName:-1,targetName:-1
+Station 9 is waiting
+Station 9 is waiting
+Station 9 reserved by instruction:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: -1, stNum: 9, robSlot: 7, }
+Station 9 status is: srcName:4,destName:6,targetName:-1
 *****Decode
+Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 13, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: SUB.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 8, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, instruction address: 15, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 8, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 16, memory address: 0, stNum: 0, robSlot: 0, }
 *****Fetch
+0 1 2 3 4
 ----------Cycle 7----------
 Int registers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
-Float write queue: [2]
+Float write queue: []
 Commit queue: [0]
 [0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Execution INT
 Staged writeback of 124 to ROB slot 1.
 Freed reservation station.
-Staged writeback of 16 to ROB slot 8.
+Staged writeback of 24 to ROB slot 3.
 Freed reservation station.
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
@@ -214,352 +188,317 @@ Memory Instruction is:null
 Branch outcome is:null
 *****Stage Commits
 Oldest instruction in ROB: { op: ORI, unit: INT, dest: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 124, floatValue: null, RegIndex: null, RegType: null }, instruction address: 2, memory address: -1, stNum: 1, robSlot: 1, }
+false
 *****Reservation Stations
 *****Issue
+Station 2 is waiting
+Station 2 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: -1, stNum: 2, robSlot: 8, }
+Station 2 status is: srcName:3,destName:-1,targetName:-1
 *****Decode
+Decode: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 10, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, instruction address: 17, memory address: 0, stNum: 0, robSlot: 0, }
 *****Fetch
+-1 1 2 8 4
 ----------Cycle 8----------
 Int registers: [0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
-Int write queue: [1, 8]
-Stations 3 is not waiting
+Int write queue: [1, 3]
+Stations 2 is not waiting
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: ORI, unit: INT, dest: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 124, floatValue: null, RegIndex: null, RegType: null }, instruction address: 2, memory address: -1, stNum: 1, robSlot: 1, }
+true
+Staged for commit: 
+{ op: ORI, unit: INT, dest: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 124, floatValue: null, RegIndex: null, RegType: null }, instruction address: 2, memory address: -1, stNum: 1, robSlot: 1, }
+Staged for commit: 
+{ op: ORI, unit: INT, dest: { intValue: 3, floatValue: null, RegIndex: 4, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, instruction address: 3, memory address: -1, stNum: 2, robSlot: 2, }
+Staged for commit: 
+{ op: ORI, unit: INT, dest: { intValue: 24, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 24, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: -1, stNum: 3, robSlot: 3, }
+*****Reservation Stations
+*****Issue
+Station 1 is waiting
+Station 1 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: -1, stNum: 1, robSlot: 9, }
+Station 1 status is: srcName:4,destName:-1,targetName:-1
+Station 17 is waiting
+Station 17 reserved by instruction:{ op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: 5, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 10, }
+Station 17 status is: srcName:-1,destName:8,targetName:-1
+Station 7 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 12, memory address: -1, stNum: 7, robSlot: 11, }
+Station 7 status is: srcName:-1,destName:-1,targetName:-1
+Station 8 is waiting
+Station 8 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 13, memory address: -1, stNum: 8, robSlot: 12, }
+Station 8 status is: srcName:1,destName:-1,targetName:-1
+*****Decode
+Decode: { op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 18, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 19, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 20, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 11, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 21, memory address: 0, stNum: 0, robSlot: 0, }
+*****Fetch
+-1 1 2 8 9
+----------Cycle 9----------
+Int registers: [0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: [1, 2, 3]
 Stations 8 is not waiting
+[0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[0, 24, 124, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[0, 24, 124, 0, 3, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Execution INT
+Staged writeback of 224 to ROB slot 4.
+Freed reservation station.
+Staged writeback of 16 to ROB slot 8.
+Freed reservation station.
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: ORI, unit: INT, dest: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 224, floatValue: null, RegIndex: null, RegType: null }, instruction address: 5, memory address: -1, stNum: 0, robSlot: 4, }
+false
+*****Reservation Stations
+*****Issue
+Station 13 is waiting
+Station 13 reserved by instruction:{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+Station 13 status is: srcName:12,destName:-1,targetName:11
+Station 14 is waiting
+Station 14 reserved by instruction:{ op: SUB.D, unit: FPU, dest: { intValue: null, floatValue: 0.0, RegIndex: 8, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 0.0, RegIndex: 2, RegType: FLOAT }, instruction address: 15, memory address: -1, stNum: 14, robSlot: 14, }
+Station 14 status is: srcName:13,destName:-1,targetName:-1
+Station 10 is waiting
+Station 10 reserved by instruction:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 8, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 16, memory address: -1, stNum: 10, robSlot: 15, }
+Station 10 status is: srcName:-1,destName:14,targetName:-1
+Station 15 reserved by instruction:{ op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, src: { intValue: null, floatValue: 0.0, RegIndex: 10, RegType: FLOAT }, target: { intValue: null, floatValue: 0.0, RegIndex: 2, RegType: FLOAT }, instruction address: 17, memory address: -1, stNum: 15, robSlot: 16, }
+Station 15 status is: srcName:-1,destName:-1,targetName:-1
+*****Decode
+*****Fetch
+-1 -1 -1 8 9
+----------Cycle 10----------
+Int registers: [0, 24, 124, 0, 3, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: [4, 8]
+Stations 1 is not waiting
+Stations 6 is not waiting
 Stations 17 is not waiting
 Float write queue: []
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
-Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 24, stNum: 7, robSlot: 3, }
-Staged writeback of 100.0 to ROB slot 3.
+Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: ORI, unit: INT, dest: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 124, floatValue: null, RegIndex: null, RegType: null }, instruction address: 2, memory address: -1, stNum: 1, robSlot: 1, }
+Oldest instruction in ROB: { op: ORI, unit: INT, dest: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 224, floatValue: null, RegIndex: null, RegType: null }, instruction address: 5, memory address: -1, stNum: 0, robSlot: 4, }
+true
 Staged for commit: 
-{ op: ORI, unit: INT, dest: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 124, floatValue: null, RegIndex: null, RegType: null }, instruction address: 2, memory address: -1, stNum: 1, robSlot: 1, }
-Staged for commit: 
-{ op: L.D, unit: Load, dest: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 200, floatValue: null, RegIndex: null, RegType: null }, instruction address: 3, memory address: 200, stNum: 6, robSlot: 2, }
+{ op: ORI, unit: INT, dest: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, src: { intValue: 0, floatValue: null, RegIndex: 0, RegType: INT }, target: { intValue: 224, floatValue: null, RegIndex: null, RegType: null }, instruction address: 5, memory address: -1, stNum: 0, robSlot: 4, }
 *****Reservation Stations
 *****Issue
+Station 11 is waiting
+Station 11 reserved by instruction:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 18, memory address: -1, stNum: 11, robSlot: 17, }
+Station 11 status is: srcName:-1,destName:16,targetName:-1
+Station 0 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 19, memory address: -1, stNum: 0, robSlot: 18, }
+Station 0 status is: srcName:-1,destName:-1,targetName:-1
+Station 2 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 20, memory address: -1, stNum: 2, robSlot: 19, }
+Station 2 status is: srcName:-1,destName:-1,targetName:-1
+Station 18 is waiting
+Station 18 reserved by instruction:{ op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 11, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 21, memory address: -1, stNum: 18, robSlot: 20, }
+Station 18 status is: srcName:-1,destName:18,targetName:-1
 *****Decode
 *****Fetch
-----------Cycle 9----------
-Int registers: [0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+18 19 -1 8 9
+----------Cycle 11----------
+Int registers: [0, 24, 124, 0, 3, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
-Float write queue: [3]
-Stations 12 is not waiting
-Commit queue: [1, 2]
-[0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float write queue: []
+Commit queue: [4]
+[0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-[0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-Freed reservation station.
 *****Execution INT
-Staged writeback of 116 to ROB slot 9.
+Staged writeback of 216 to ROB slot 9.
 Freed reservation station.
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
 *****Execution BRANCH
 Staged writeback of 0 to ROB slot 10.
 Freed reservation station.
-Branch outcome is:{ op: BNEZ, unit: BU, dest: { intValue: 16, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 10, }
+Branch outcome is:{ op: BNEZ, unit: BU, dest: { intValue: 16, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: 5, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 10, }
 *****Stage Commits
-Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 24, stNum: 7, robSlot: 3, }
-Staged for commit: 
-{ op: L.D, unit: Load, dest: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 24, stNum: 7, robSlot: 3, }
+Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 224, stNum: 6, robSlot: 5, }
+false
 *****Branch - flush pipeline
 *****Reservation Stations
 *****Issue
-----------Cycle 10----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+18 19 -1 8 9
+----------Cycle 12----------
+Int registers: [0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: [9, 10]
 Float write queue: []
-Commit queue: [3]
-[0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[100.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Commit queue: []
+*****Execution INT
+Staged writeback of 116 to ROB slot 19.
 Freed reservation station.
-*****Execution INT
 *****Execution FPU
-FPU first stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 4, }
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
-Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 124, stNum: 8, robSlot: 5, }
-Staged writeback of 300.0 to ROB slot 5.
+Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 224, stNum: 6, robSlot: 5, }
+Staged writeback of 100.0 to ROB slot 5.
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 4, }
+Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 224, stNum: 6, robSlot: 5, }
+false
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
-----------Cycle 11----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [100.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Writeback & Commit
-Int write queue: []
-Float write queue: [5]
-Commit queue: []
-*****Execution INT
-*****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 4, }
-FPU third stage instruction is: null
-FPU last stage instruction is: null
-*****Execution MULT
-*****Execution LOAD/STORE
-Memory Instruction is:null
-*****Execution BRANCH
-Branch outcome is:null
-*****Stage Commits
-Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 4, }
-*****Reservation Stations
-*****Issue
-*****Decode
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: 0, stNum: 0, robSlot: 0, }
-*****Fetch
-----------Cycle 12----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [100.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Writeback & Commit
-Int write queue: []
-Float write queue: []
-Commit queue: []
-*****Execution INT
-*****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 4, }
-FPU last stage instruction is: null
-*****Execution MULT
-*****Execution LOAD/STORE
-Memory Instruction is:null
-*****Execution BRANCH
-Branch outcome is:null
-*****Stage Commits
-Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 4, }
-*****Reservation Stations
-*****Issue
-Station 6 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: -1, stNum: 6, robSlot: 11, }
-Station 6 status is: srcName:-1,destName:-1,targetName:-1
-Station 14 is waiting
-Station 14 reserved by instruction:{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 14, robSlot: 12, }
-Station 14 status is: srcName:11,destName:-1,targetName:-1
-Station 7 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: -1, stNum: 7, robSlot: 13, }
-Station 7 status is: srcName:-1,destName:-1,targetName:-1
-Station 15 is waiting
-Station 15 reserved by instruction:{ op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 15, robSlot: 14, }
-Station 15 status is: srcName:12,destName:-1,targetName:13
-*****Decode
-Decode: { op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: 0, stNum: 0, robSlot: 0, }
-*****Fetch
+18 19 -1 8 9
 ----------Cycle 13----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [100.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Int registers: [0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
-Int write queue: []
-Float write queue: []
+Int write queue: [19]
+Float write queue: [5]
+Stations 12 is not waiting
 Commit queue: []
 *****Execution INT
-*****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 4, }
-Staged writeback of 200.0 to ROB slot 4.
+Staged writeback of 16 to ROB slot 18.
 Freed reservation station.
+*****Execution FPU
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 4, }
+Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 224, stNum: 6, robSlot: 5, }
+true
+Staged for commit: 
+{ op: L.D, unit: Load, dest: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 224, stNum: 6, robSlot: 5, }
 *****Reservation Stations
 *****Issue
-Station 10 is waiting
-Station 10 reserved by instruction:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: -1, stNum: 10, robSlot: 15, }
-Station 10 status is: srcName:-1,destName:14,targetName:-1
-Station 0 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: -1, stNum: 0, robSlot: 16, }
-Station 0 status is: srcName:-1,destName:-1,targetName:-1
-Station 1 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: -1, stNum: 1, robSlot: 17, }
-Station 1 status is: srcName:-1,destName:-1,targetName:-1
-Station 17 is waiting
-Station 17 reserved by instruction:{ op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 18, }
-Station 17 status is: srcName:-1,destName:16,targetName:-1
 *****Decode
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 1, RegType: FLOAT }, instruction address: 7, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: 0, stNum: 0, robSlot: 0, }
 *****Fetch
+18 19 -1 8 9
 ----------Cycle 14----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [100.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Int registers: [0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
-Int write queue: []
-Float write queue: [4]
-Stations 13 is not waiting
-Commit queue: []
+Int write queue: [18]
+Float write queue: []
+Commit queue: [5]
+[0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Freed reservation station.
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
+Staged writeback of 0.0 to ROB slot 16.
+Freed reservation station.
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 4, }
-Staged for commit: 
-{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 4, }
-Staged for commit: 
-{ op: L.D, unit: Load, dest: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 124, stNum: 8, robSlot: 5, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 0.0, RegIndex: 1, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 12, robSlot: 6, }
+false
 *****Reservation Stations
 *****Issue
 *****Decode
-Decode: { op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: 5, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: 0, stNum: 0, robSlot: 0, }
 *****Fetch
+18 19 -1 8 9
 ----------Cycle 15----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [100.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Int registers: [0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
-Float write queue: []
-Commit queue: [4, 5]
-[0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[200.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-[0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-Freed reservation station.
+Float write queue: [16]
+Commit queue: []
 *****Execution INT
-Staged writeback of 16 to ROB slot 16.
-Freed reservation station.
 *****Execution FPU
-FPU first stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 6, }
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
-Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 24, stNum: 6, robSlot: 11, }
-Staged writeback of 100.0 to ROB slot 11.
+Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 6, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 0.0, RegIndex: 1, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 12, robSlot: 6, }
+false
 *****Reservation Stations
 *****Issue
+Station 6 is waiting
+Station 6 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: -1, stNum: 6, robSlot: 21, }
+Station 6 status is: srcName:9,destName:-1,targetName:-1
+Station 15 is waiting
+Station 15 reserved by instruction:{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 0.0, RegIndex: 1, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 15, robSlot: 22, }
+Station 15 status is: srcName:21,destName:-1,targetName:-1
 *****Decode
+Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 1, RegType: FLOAT }, instruction address: 7, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: 0, stNum: 0, robSlot: 0, }
 *****Fetch
+18 19 -1 8 9
 ----------Cycle 16----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Writeback & Commit
-Int write queue: [16]
-Stations 17 is not waiting
-Float write queue: [11]
-Stations 14 is not waiting
-Commit queue: []
-*****Execution INT
-*****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 6, }
-FPU third stage instruction is: null
-FPU last stage instruction is: null
-*****Execution MULT
-*****Execution LOAD/STORE
-Memory Instruction is:null
-*****Execution BRANCH
-Branch outcome is:null
-*****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 6, }
-*****Reservation Stations
-*****Issue
-Station 8 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: -1, stNum: 8, robSlot: 19, }
-Station 8 status is: srcName:-1,destName:-1,targetName:-1
-Station 12 is waiting
-Station 12 reserved by instruction:{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 20, }
-Station 12 status is: srcName:19,destName:-1,targetName:-1
-*****Decode
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: 0, stNum: 0, robSlot: 0, }
-*****Fetch
-----------Cycle 17----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Int registers: [0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: []
 Commit queue: []
 *****Execution INT
-Staged writeback of 116 to ROB slot 17.
-Freed reservation station.
 *****Execution FPU
-FPU first stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 14, robSlot: 12, }
-FPU second stage instruction is: null
-FPU third stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 6, }
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
-Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 124, stNum: 7, robSlot: 13, }
-Staged writeback of 300.0 to ROB slot 13.
+Memory Instruction is:null
 *****Execution BRANCH
-Staged writeback of 0 to ROB slot 18.
-Freed reservation station.
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 6, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 0.0, RegIndex: 1, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 12, robSlot: 6, }
+false
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
-----------Cycle 18----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+18 19 -1 8 9
+----------Cycle 17----------
+Int registers: [0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
-Int write queue: [17, 18]
-Float write queue: [13]
+Int write queue: []
+Float write queue: []
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 14, robSlot: 12, }
-FPU third stage instruction is: null
-FPU last stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 6, }
-Staged writeback of 500.0 to ROB slot 6.
+Staged writeback of 0.0 to ROB slot 6.
 Freed reservation station.
 *****Execution MULT
 *****Execution LOAD/STORE
@@ -567,14 +506,16 @@ Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 6, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: 0.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 0.0, RegIndex: 1, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 12, robSlot: 6, }
+false
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
-----------Cycle 19----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+18 19 -1 8 9
+----------Cycle 18----------
+Int registers: [0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: [6]
@@ -582,761 +523,767 @@ Stations 9 is not waiting
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 14, robSlot: 12, }
-FPU last stage instruction is: null
-*****Execution MULT
-*****Execution LOAD/STORE
-Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 24, stNum: 8, robSlot: 19, }
-Staged writeback of 100.0 to ROB slot 19.
-*****Execution BRANCH
-Branch outcome is:null
-*****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 6, }
-Staged for commit: 
-{ op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 6, }
-*****Reservation Stations
-*****Issue
-*****Decode
-*****Fetch
-----------Cycle 20----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Writeback & Commit
-Int write queue: []
-Float write queue: [19]
-Stations 12 is not waiting
-Commit queue: [6]
-[0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Execution INT
-*****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 14, robSlot: 12, }
-Staged writeback of 200.0 to ROB slot 12.
-Freed reservation station.
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
-LSU instruction is:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 124, stNum: 9, robSlot: 7, }
-Staged writeback of 500.0 to ROB slot 7.
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: S.D, unit: Store, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 124, stNum: 9, robSlot: 7, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: 0.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 0.0, RegIndex: 1, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 12, robSlot: 6, }
+true
+Staged for commit: 
+{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: 0.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 0.0, RegIndex: 1, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 12, robSlot: 6, }
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
-----------Cycle 21----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+18 19 -1 8 9
+----------Cycle 19----------
+Int registers: [0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
-Float write queue: [12, 7]
-Stations 15 is not waiting
+Float write queue: []
+Commit queue: [6]
+[0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+LSU instruction is:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: 0.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 224, stNum: 9, robSlot: 7, }
+Staged writeback of 0.0 to ROB slot 7.
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: S.D, unit: Store, dest: { intValue: null, floatValue: 0.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 224, stNum: 9, robSlot: 7, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 8 9
+----------Cycle 20----------
+Int registers: [0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: [7]
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 20, }
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: S.D, unit: Store, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 124, stNum: 9, robSlot: 7, }
+Oldest instruction in ROB: { op: S.D, unit: Store, dest: { intValue: null, floatValue: 0.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 224, stNum: 9, robSlot: 7, }
+true
 Staged for commit: 
-{ op: S.D, unit: Store, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 124, stNum: 9, robSlot: 7, }
+{ op: S.D, unit: Store, dest: { intValue: null, floatValue: 0.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 224, stNum: 9, robSlot: 7, }
 Staged for commit: 
-{ op: DADDI, unit: INT, dest: { intValue: 16, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: -1, stNum: 2, robSlot: 8, }
+{ op: DADDI, unit: INT, dest: { intValue: 16, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: 24, floatValue: null, RegIndex: 5, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: -1, stNum: 2, robSlot: 8, }
 Staged for commit: 
-{ op: DADDI, unit: INT, dest: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: -1, stNum: 3, robSlot: 9, }
+{ op: DADDI, unit: INT, dest: { intValue: 216, floatValue: null, RegIndex: 6, RegType: INT }, src: { intValue: 224, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: -1, stNum: 1, robSlot: 9, }
 Staged for commit: 
-{ op: BNEZ, unit: BU, dest: { intValue: 16, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 10, }
+{ op: BNEZ, unit: BU, dest: { intValue: 16, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: 5, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 10, }
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
-----------Cycle 22----------
-Int registers: [0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+18 19 -1 8 9
+----------Cycle 21----------
+Int registers: [0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: []
 Commit queue: [7, 8, 9, 10]
-[0, 24, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[0, 24, 124, 0, 3, 24, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 Freed reservation station.
-[0, 16, 124, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[0, 24, 124, 0, 3, 16, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Stations 6 is not waiting
+[0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 15, robSlot: 14, }
-FPU second stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 20, }
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 24, stNum: 6, robSlot: 11, }
-Staged for commit: 
-{ op: L.D, unit: Load, dest: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 24, stNum: 6, robSlot: 11, }
-Staged for commit: 
-{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 14, robSlot: 12, }
-Staged for commit: 
-{ op: L.D, unit: Load, dest: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 124, stNum: 7, robSlot: 13, }
+Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 12, memory address: 24, stNum: 7, robSlot: 11, }
+false
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
-----------Cycle 23----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Writeback & Commit
-Int write queue: []
-Float write queue: []
-Commit queue: [11, 12, 13]
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[100.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-Freed reservation station.
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-Freed reservation station.
-*****Execution INT
-*****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 15, robSlot: 14, }
-FPU third stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 20, }
-FPU last stage instruction is: null
-*****Execution MULT
-*****Execution LOAD/STORE
-Memory Instruction is:null
-*****Execution BRANCH
-Branch outcome is:null
-*****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 15, robSlot: 14, }
-*****Reservation Stations
-*****Issue
-*****Decode
-*****Fetch
-----------Cycle 24----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+18 19 -1 -1 -1
+----------Cycle 22----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: []
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 15, robSlot: 14, }
-FPU last stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 20, }
-Staged writeback of 200.0 to ROB slot 20.
-Freed reservation station.
 *****Execution MULT
 *****Execution LOAD/STORE
-Memory Instruction is:null
+Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 12, memory address: 24, stNum: 7, robSlot: 11, }
+Staged writeback of 2.0 to ROB slot 11.
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 15, robSlot: 14, }
+Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: 2.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 12, memory address: 24, stNum: 7, robSlot: 11, }
+false
 *****Reservation Stations
 *****Issue
-Station 6 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: -1, stNum: 6, robSlot: 21, }
-Station 6 status is: srcName:-1,destName:-1,targetName:-1
-Station 13 is waiting
-Station 13 reserved by instruction:{ op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 22, }
-Station 13 status is: srcName:20,destName:-1,targetName:21
 Station 9 is waiting
-Station 9 reserved by instruction:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: -1, stNum: 9, robSlot: 23, }
+Station 9 reserved by instruction:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: 216, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: -1, stNum: 9, robSlot: 23, }
 Station 9 status is: srcName:-1,destName:22,targetName:-1
-Station 0 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 16, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: -1, stNum: 0, robSlot: 24, }
+Station 0 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: 16, floatValue: null, RegIndex: 5, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: -1, stNum: 0, robSlot: 24, }
 Station 0 status is: srcName:-1,destName:-1,targetName:-1
-*****Decode
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: 0, stNum: 0, robSlot: 0, }
-*****Fetch
-----------Cycle 25----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Writeback & Commit
-Int write queue: []
-Float write queue: [20]
-Commit queue: []
-*****Execution INT
-*****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 15, robSlot: 14, }
-Staged writeback of 500.0 to ROB slot 14.
-Freed reservation station.
-*****Execution MULT
-*****Execution LOAD/STORE
-Memory Instruction is:null
-*****Execution BRANCH
-Branch outcome is:null
-*****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 15, robSlot: 14, }
-*****Reservation Stations
-*****Issue
-Station 1 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: -1, stNum: 1, robSlot: 25, }
+Station 1 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, src: { intValue: 216, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: -1, stNum: 1, robSlot: 25, }
 Station 1 status is: srcName:-1,destName:-1,targetName:-1
 Station 17 is waiting
-Station 17 reserved by instruction:{ op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 26, }
+Station 17 reserved by instruction:{ op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: 5, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 26, }
 Station 17 status is: srcName:-1,destName:24,targetName:-1
-Station 7 is waiting
-Station 7 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: -1, stNum: 7, robSlot: 27, }
-Station 7 status is: srcName:24,destName:-1,targetName:-1
-Station 12 is waiting
-Station 12 reserved by instruction:{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 28, }
-Station 12 status is: srcName:27,destName:-1,targetName:-1
 *****Decode
-Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 5, RegType: INT }, src: { intValue: 5, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 0, stNum: 0, robSlot: 0, }
+Decode: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 1, RegType: FLOAT }, instruction address: 7, memory address: 0, stNum: 0, robSlot: 0, }
 *****Fetch
-----------Cycle 26----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+18 19 -1 24 25
+----------Cycle 23----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
-Float write queue: [14]
-Stations 10 is not waiting
+Float write queue: [11]
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: 2.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 12, memory address: 24, stNum: 7, robSlot: 11, }
+true
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 24----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
 Commit queue: []
 *****Execution INT
 Staged writeback of 8 to ROB slot 24.
 Freed reservation station.
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
-Memory Instruction is:null
+Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 13, memory address: 124, stNum: 8, robSlot: 12, }
+Staged writeback of 10.0 to ROB slot 12.
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 15, robSlot: 14, }
-Staged for commit: 
-{ op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 300.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 15, robSlot: 14, }
+Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: 10.0, RegIndex: 6, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 13, memory address: 124, stNum: 8, robSlot: 12, }
+false
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
-----------Cycle 27----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+18 19 -1 24 25
+----------Cycle 25----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: [24]
-Stations 7 is not waiting
 Stations 17 is not waiting
-Float write queue: []
-Commit queue: [14]
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Float write queue: [12]
+Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
-Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 116, stNum: 6, robSlot: 21, }
-Staged writeback of 200.0 to ROB slot 21.
+Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: S.D, unit: Store, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: -1, stNum: 10, robSlot: 15, }
+Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: 10.0, RegIndex: 6, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 13, memory address: 124, stNum: 8, robSlot: 12, }
+true
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
-----------Cycle 28----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+18 19 -1 24 25
+----------Cycle 26----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
-Float write queue: [21]
-Stations 13 is not waiting
+Float write queue: []
 Commit queue: []
 *****Execution INT
-Staged writeback of 108 to ROB slot 25.
+Staged writeback of 208 to ROB slot 25.
 Freed reservation station.
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
-LSU instruction is:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 124, stNum: 10, robSlot: 15, }
-Staged writeback of 500.0 to ROB slot 15.
 *****Execution BRANCH
 Staged writeback of 0 to ROB slot 26.
 Freed reservation station.
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: S.D, unit: Store, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 124, stNum: 10, robSlot: 15, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
-----------Cycle 29----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+18 19 -1 24 25
+----------Cycle 27----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: [25, 26]
-Float write queue: [15]
+Float write queue: []
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 200.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 22, }
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: S.D, unit: Store, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 124, stNum: 10, robSlot: 15, }
-Staged for commit: 
-{ op: S.D, unit: Store, dest: { intValue: null, floatValue: 500.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 124, stNum: 10, robSlot: 15, }
-Staged for commit: 
-{ op: DADDI, unit: INT, dest: { intValue: 16, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: -1, stNum: 0, robSlot: 16, }
-Staged for commit: 
-{ op: DADDI, unit: INT, dest: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 124, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: -1, stNum: 1, robSlot: 17, }
-Staged for commit: 
-{ op: BNEZ, unit: BU, dest: { intValue: 16, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 18, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
+18 19 -1 24 25
+----------Cycle 28----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 29----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
 ----------Cycle 30----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: []
-Commit queue: [15, 16, 17, 18]
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-Freed reservation station.
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 200.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 22, }
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 24, stNum: 8, robSlot: 19, }
-Staged for commit: 
-{ op: L.D, unit: Load, dest: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 24, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 24, stNum: 8, robSlot: 19, }
-Staged for commit: 
-{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 100.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 20, }
-Staged for commit: 
-{ op: L.D, unit: Load, dest: { intValue: null, floatValue: 200.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 116, stNum: 6, robSlot: 21, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
+18 19 -1 24 25
 ----------Cycle 31----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [500.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: []
-Commit queue: [19, 20, 21]
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[100.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-Freed reservation station.
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[200.0, 0.0, 2.0, 0.0, 300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[200.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-Freed reservation station.
+Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 200.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 22, }
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
-Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 8, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 8, stNum: 7, robSlot: 27, }
-Staged writeback of 300.0 to ROB slot 27.
+Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 200.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 22, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
+18 19 -1 24 25
 ----------Cycle 32----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [200.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
-Float write queue: [27]
-Stations 12 is not waiting
+Float write queue: []
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 200.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 22, }
-Staged writeback of 400.0 to ROB slot 22.
-Freed reservation station.
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: 400.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 200.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 22, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
 *****Reservation Stations
 *****Issue
-Station 6 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: -1, stNum: 6, robSlot: 29, }
-Station 6 status is: srcName:-1,destName:-1,targetName:-1
-Station 14 is waiting
-Station 14 reserved by instruction:{ op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 14, robSlot: 30, }
-Station 14 status is: srcName:28,destName:-1,targetName:29
-Station 10 is waiting
-Station 10 reserved by instruction:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: -1, stNum: 10, robSlot: 31, }
-Station 10 status is: srcName:-1,destName:30,targetName:-1
-Station 0 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 16, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: -1, stNum: 0, robSlot: 0, }
-Station 0 status is: srcName:-1,destName:-1,targetName:-1
 *****Decode
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: 0, stNum: 0, robSlot: 0, }
 *****Fetch
+18 19 -1 24 25
 ----------Cycle 33----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [200.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
-Float write queue: [22]
-Stations 9 is not waiting
+Float write queue: []
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 300.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 28, }
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: 400.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 200.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 22, }
-Staged for commit: 
-{ op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: 400.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 200.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 200.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 13, robSlot: 22, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
 *****Reservation Stations
 *****Issue
-Station 1 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: -1, stNum: 1, robSlot: 1, }
-Station 1 status is: srcName:-1,destName:-1,targetName:-1
-Station 17 is waiting
-Station 17 reserved by instruction:{ op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 2, }
-Station 17 status is: srcName:-1,destName:0,targetName:-1
-Station 8 is waiting
-Station 8 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: -1, stNum: 8, robSlot: 3, }
-Station 8 status is: srcName:0,destName:-1,targetName:-1
-Station 13 is waiting
-Station 13 reserved by instruction:{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 13, robSlot: 4, }
-Station 13 status is: srcName:3,destName:-1,targetName:-1
 *****Decode
-Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: 0, stNum: 0, robSlot: 0, }
 *****Fetch
+18 19 -1 24 25
 ----------Cycle 34----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [200.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: []
-Commit queue: [22]
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[400.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Commit queue: []
 *****Execution INT
-Staged writeback of 8 to ROB slot 0.
-Freed reservation station.
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 300.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 28, }
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
-LSU instruction is:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: 400.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 116, stNum: 9, robSlot: 23, }
-Staged writeback of 400.0 to ROB slot 23.
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: S.D, unit: Store, dest: { intValue: null, floatValue: 400.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 116, stNum: 9, robSlot: 23, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
+18 19 -1 24 25
 ----------Cycle 35----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [400.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
-Int write queue: [0]
-Stations 8 is not waiting
-Stations 17 is not waiting
-Float write queue: [23]
+Int write queue: []
+Float write queue: []
 Commit queue: []
 *****Execution INT
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 300.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 28, }
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: S.D, unit: Store, dest: { intValue: null, floatValue: 400.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 116, stNum: 9, robSlot: 23, }
-Staged for commit: 
-{ op: S.D, unit: Store, dest: { intValue: null, floatValue: 400.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 116, stNum: 9, robSlot: 23, }
-Staged for commit: 
-{ op: DADDI, unit: INT, dest: { intValue: 8, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 16, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: -1, stNum: 0, robSlot: 24, }
-Staged for commit: 
-{ op: DADDI, unit: INT, dest: { intValue: 108, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: -1, stNum: 1, robSlot: 25, }
-Staged for commit: 
-{ op: BNEZ, unit: BU, dest: { intValue: 8, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 26, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
 *****Reservation Stations
 *****Issue
 *****Decode
 *****Fetch
+18 19 -1 24 25
 ----------Cycle 36----------
-Int registers: [0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [400.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 *****Writeback & Commit
 Int write queue: []
 Float write queue: []
-Commit queue: [23, 24, 25, 26]
-[0, 16, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[400.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-Freed reservation station.
-[0, 8, 116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[400.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-[0, 8, 108, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[400.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-[0, 8, 108, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[400.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Execution INT
-Staged writeback of 108 to ROB slot 1.
-Freed reservation station.
-*****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 300.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 28, }
-Staged writeback of 600.0 to ROB slot 28.
-Freed reservation station.
-*****Execution MULT
-*****Execution LOAD/STORE
-Memory Instruction is:null
-*****Execution BRANCH
-Staged writeback of 0 to ROB slot 2.
-Freed reservation station.
-Branch outcome is:null
-*****Stage Commits
-Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: 300.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 8, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 8, stNum: 7, robSlot: 27, }
-Staged for commit: 
-{ op: L.D, unit: Load, dest: { intValue: null, floatValue: 300.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: 8, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 8, stNum: 7, robSlot: 27, }
-*****Reservation Stations
-*****Issue
-*****Decode
-*****Fetch
-----------Cycle 37----------
-Int registers: [0, 8, 108, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [400.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Writeback & Commit
-Int write queue: [1, 2]
-Float write queue: [28]
-Commit queue: [27]
-[0, 8, 108, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[300.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-Freed reservation station.
-*****Execution INT
-*****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
-*****Execution MULT
-*****Execution LOAD/STORE
-Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 116, stNum: 6, robSlot: 29, }
-Staged writeback of 400.0 to ROB slot 29.
-*****Execution BRANCH
-Branch outcome is:null
-*****Stage Commits
-Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: 600.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 300.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 28, }
-Staged for commit: 
-{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: 600.0, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 300.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 12, robSlot: 28, }
-*****Reservation Stations
-*****Issue
-*****Decode
-*****Fetch
-----------Cycle 38----------
-Int registers: [0, 8, 108, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [300.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Writeback & Commit
-Int write queue: []
-Float write queue: [29]
-Stations 14 is not waiting
-Commit queue: [28]
-[0, 8, 108, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[600.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Execution INT
-*****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
-*****Execution MULT
-*****Execution LOAD/STORE
-Memory Instruction is:null
-*****Execution BRANCH
-Branch outcome is:null
-*****Stage Commits
-Oldest instruction in ROB: { op: L.D, unit: Load, dest: { intValue: null, floatValue: 400.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 116, stNum: 6, robSlot: 29, }
-Staged for commit: 
-{ op: L.D, unit: Load, dest: { intValue: null, floatValue: 400.0, RegIndex: 4, RegType: FLOAT }, src: { intValue: 116, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 116, stNum: 6, robSlot: 29, }
-*****Reservation Stations
-*****Issue
-Station 7 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: 108, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: -1, stNum: 7, robSlot: 5, }
-Station 7 status is: srcName:-1,destName:-1,targetName:-1
-Station 12 is waiting
-Station 12 reserved by instruction:{ op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 12, robSlot: 6, }
-Station 12 status is: srcName:4,destName:-1,targetName:5
-Station 9 is waiting
-Station 9 reserved by instruction:{ op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 108, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: -1, stNum: 9, robSlot: 7, }
-Station 9 status is: srcName:-1,destName:6,targetName:-1
-Station 0 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 8, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: -1, stNum: 0, robSlot: 8, }
-Station 0 status is: srcName:-1,destName:-1,targetName:-1
-*****Decode
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 6, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: S.D, unit: Store, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 8, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 9, memory address: 0, stNum: 0, robSlot: 0, }
-*****Fetch
-----------Cycle 39----------
-Int registers: [0, 8, 108, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [600.0, 0.0, 2.0, 0.0, 200.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Writeback & Commit
-Int write queue: []
-Float write queue: []
-Commit queue: [29]
-[0, 8, 108, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[600.0, 0.0, 2.0, 0.0, 400.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-Freed reservation station.
-*****Execution INT
-*****Execution FPU
-FPU first stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 600.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 400.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 14, robSlot: 30, }
-FPU second stage instruction is: null
-FPU third stage instruction is: null
-FPU last stage instruction is: null
-*****Execution MULT
-*****Execution LOAD/STORE
-Memory Instruction is:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: 8, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 8, stNum: 8, robSlot: 3, }
-Staged writeback of 300.0 to ROB slot 3.
-*****Execution BRANCH
-Branch outcome is:null
-*****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 600.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 400.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 14, robSlot: 30, }
-*****Reservation Stations
-*****Issue
-Station 1 reserved by instruction:{ op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: 108, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: -1, stNum: 1, robSlot: 9, }
-Station 1 status is: srcName:-1,destName:-1,targetName:-1
-Station 17 is waiting
-Station 17 reserved by instruction:{ op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: -1, stNum: 17, robSlot: 10, }
-Station 17 status is: srcName:-1,destName:8,targetName:-1
-*****Decode
-Decode: { op: DADDI, unit: INT, dest: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, src: { intValue: null, floatValue: null, RegIndex: 2, RegType: INT }, target: { intValue: -8, floatValue: null, RegIndex: null, RegType: null }, instruction address: 10, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: BNEZ, unit: BU, dest: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, src: { intValue: 3, floatValue: null, RegIndex: null, RegType: null }, target: null, instruction address: 11, memory address: 0, stNum: 0, robSlot: 0, }
-*****Fetch
-----------Cycle 40----------
-Int registers: [0, 8, 108, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Int registers: [600.0, 0.0, 2.0, 0.0, 400.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-*****Writeback & Commit
-Int write queue: []
-Float write queue: [3]
-Stations 13 is not waiting
 Commit queue: []
 *****Execution INT
-Staged writeback of 0 to ROB slot 8.
-Freed reservation station.
 *****Execution FPU
-FPU first stage instruction is: null
-FPU second stage instruction is: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 600.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 400.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 14, robSlot: 30, }
-FPU third stage instruction is: null
-FPU last stage instruction is: null
 *****Execution MULT
 *****Execution LOAD/STORE
 Memory Instruction is:null
 *****Execution BRANCH
 Branch outcome is:null
 *****Stage Commits
-Oldest instruction in ROB: { op: ADD.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: 600.0, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 400.0, RegIndex: 4, RegType: FLOAT }, instruction address: 7, memory address: -1, stNum: 14, robSlot: 30, }
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
 *****Reservation Stations
 *****Issue
-Station 6 is waiting
-Station 6 reserved by instruction:{ op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: -1, stNum: 6, robSlot: 11, }
-Station 6 status is: srcName:8,destName:-1,targetName:-1
-Station 15 is waiting
-Station 15 reserved by instruction:{ op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: 2.0, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: -1, stNum: 15, robSlot: 12, }
-Station 15 status is: srcName:11,destName:-1,targetName:-1
 *****Decode
-Decode: { op: L.D, unit: Load, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 1, RegType: INT }, target: { intValue: 0, floatValue: null, RegIndex: null, RegType: null }, instruction address: 4, memory address: 0, stNum: 0, robSlot: 0, }
-Decode: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 2, RegType: FLOAT }, instruction address: 5, memory address: 0, stNum: 0, robSlot: 0, }
 *****Fetch
+18 19 -1 24 25
+----------Cycle 37----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 38----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 39----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 40----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 41----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 42----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 43----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 44----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 45----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 46----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 47----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 48----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 49----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
+----------Cycle 50----------
+Int registers: [0, 24, 124, 0, 3, 16, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Float registers: [100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+*****Writeback & Commit
+Int write queue: []
+Float write queue: []
+Commit queue: []
+*****Execution INT
+*****Execution FPU
+*****Execution MULT
+*****Execution LOAD/STORE
+Memory Instruction is:null
+*****Execution BRANCH
+Branch outcome is:null
+*****Stage Commits
+Oldest instruction in ROB: { op: MUL.D, unit: FPU, dest: { intValue: null, floatValue: null, RegIndex: 0, RegType: FLOAT }, src: { intValue: null, floatValue: null, RegIndex: 6, RegType: FLOAT }, target: { intValue: null, floatValue: null, RegIndex: 4, RegType: FLOAT }, instruction address: 14, memory address: -1, stNum: 13, robSlot: 13, }
+false
+*****Reservation Stations
+*****Issue
+*****Decode
+*****Fetch
+18 19 -1 24 25
