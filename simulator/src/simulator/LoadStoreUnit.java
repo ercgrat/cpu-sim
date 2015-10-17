@@ -122,7 +122,9 @@ public class LoadStoreUnit {
                         isMemInstWaiting = true;
                 }
                 else{
-                    memoryInst.dest.intValue= Math.round(memory.get(memoryInst.memoryAddress));
+                    Float memVal = memory.get(memoryInst.memoryAddress);
+                    if(memVal != null)
+                        memoryInst.dest.intValue= Math.round(memory.get(memoryInst.memoryAddress));
                     if(reorderBuffer.write(memoryInst.robSlot, memoryInst.dest.intValue))
                         memoryInst = null;
                     else

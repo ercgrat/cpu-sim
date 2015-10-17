@@ -49,7 +49,7 @@ public class Simulator {
         BranchUnit branchUnit = new BranchUnit(reservationStations, reorderBuffer);
         Instruction branchInstruction = null;
         int cycles = 0;
-        int countdown = 60;
+        int countdown = 100;
         boolean readingInstructions = true;
         while(true) {
             cycles++;
@@ -64,9 +64,9 @@ public class Simulator {
             // execution
             System.out.println("*****Execution INT");
             intUnits.cycle();
-            System.out.println("*****Execution FPU");
+            //System.out.println("*****Execution FPU");
             fpUnit.cycle();
-            System.out.println("*****Execution MULT");
+            //System.out.println("*****Execution MULT");
             multUnit.cycle();
             System.out.println("*****Execution LOAD/STORE");
             lsUnit.cycle();
@@ -96,6 +96,7 @@ public class Simulator {
                 System.out.println("*****Fetch");
                 readingInstructions = fetchUnit.cycle();
             }
+            scoreboard.cycle();
             if(true) {
                 countdown--;
                 if(countdown == 0) {

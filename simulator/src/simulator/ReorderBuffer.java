@@ -185,9 +185,9 @@ public class ReorderBuffer {
     
     public boolean write(int index, Integer val) {
         System.out.println("Staged writeback of " + val + " to ROB slot " + index + ".");
-		if(val == null) {
+		/*if(val == null) {
 			return true;
-		}
+		}*/
 		
         if(writtenThisCycle < NC && index >= 0 && index < NR) {
 			intIndexWriteQueue.add(index);
@@ -201,9 +201,9 @@ public class ReorderBuffer {
     
     public boolean write(int index, Float val) {
         System.out.println("Staged writeback of " + val + " to ROB slot " + index + ".");
-		if(val == null) {
+		/*if(val == null) {
 			return true;
-		}
+		}*/
 		
         if(writtenThisCycle < NC && index >= 0 && index < NR) {
 			floatIndexWriteQueue.add(index);

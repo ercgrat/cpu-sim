@@ -66,6 +66,10 @@ public class ReservationStations {
     
     public void cycle(){
         for(int i=0;i<numStations;i++){
+            /*if(i<9 && i>5){
+                System.out.println("Station "+i+" status is: srcName "+Stations[i].srcName+" destName "+Stations[i].destName+" target "+Stations[i].targetName);
+                System.out.println("Station "+i+" instruction is: srcName "+Stations[i].instruction);
+            }*/
             if(Stations[i].justFreed){
                 Stations[i].isFree = true;
                 Stations[i].isLSUdone = true;
@@ -157,7 +161,7 @@ public class ReservationStations {
                 int readyCounter = 0;
                 int earliest = -1;
                 for(int i=6;i<12;i++){
-                    if(!Stations[i].isFree && !Stations[i].isWaiting && Stations[i].instruction!=null && Stations[i].isLSUdone){
+                    if(!Stations[i].isFree && Stations[i].instruction!=null && Stations[i].isLSUdone){
                         robSlots[readyCounter] = Stations[i].instruction.robSlot;
                         stNums[readyCounter] = i;
                         readyCounter++;
@@ -165,12 +169,18 @@ public class ReservationStations {
                 }
                 if(readyCounter > 0) {
                     earliest = stNums[0];
-				}
+                    //System.out.println("Earliest instruction is:"+Stations[stNums[0]].instruction);
+		}
                 for(int i = 1; i < readyCounter; i++){
                    //Check from rob which of the two slots is for earlier instruction 
-                    if(reorderBuffer.isBefore(Stations[stNums[i]].instruction, Stations[earliest].instruction))
+                    if(reorderBuffer.isBefore(Stations[stNums[i]].instruction, Stations[earliest].instruction)){
                         earliest = stNums[i];
+                        //System.out.println("Earlier instruction is:"+Stations[stNums[i]].instruction);
+                        //System.out.println("Later instruction is:"+Stations[earliest].instruction);
+                    }
                 }
+                if(earliest != -1 && Stations[earliest].isWaiting)
+                    earliest = -1;
                 return earliest;
             case "FPU":
                 for(int i=12;i<17;i++){

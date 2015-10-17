@@ -42,7 +42,8 @@ public class Emulator {
                 instructions.set(i, instructions.get(i).trim());
                 if(instructions.get(i).startsWith("B")){
                     String[] subInsts=instructions.get(i).split(",");
-                    int targetAddr=branchLabels.get(subInsts[subInsts.length-1]);
+                    //System.out.println(subInsts[0]);
+                    int targetAddr=branchLabels.get(subInsts[subInsts.length-1].trim());
                     String tmpInst="";
                     for(int j=0;j<(subInsts.length-1);j++){
                         tmpInst+=subInsts[j]+",";
