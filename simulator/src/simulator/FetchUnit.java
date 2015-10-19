@@ -51,6 +51,17 @@ public class FetchUnit {
 		}
 	}
 	
+        public int[] dumpInstructionAddresses(){
+            return branchTable.instructions;
+        }
+        
+        public int[] dumpTargetAddresses(){
+            return branchTable.targetAddresses;
+        } 
+        
+        public boolean[] dumpOutcomes(){
+            return branchTable.branchConditions;
+        } 
 	public FetchUnit(int NF, int NQ, ArrayList<String> instructionMemory) {
 		this.NF = NF;
 		this.NQ = NQ;

@@ -56,9 +56,10 @@ public class ReorderBuffer {
 		entryCommitQueue = new ArrayList<ROBEntry>();
     }
     
-    public void cycle() {
+    public int cycle() {
 		// Write back what came from the execution stage last cycle and empty the writeback queues
 		//System.out.println("Int write queue: " + intIndexWriteQueue);
+        int branchCommits = 0;
         for(int i = 0; i < intIndexWriteQueue.size(); i++) {
 			int robSlot = intIndexWriteQueue.get(i);
 			ROB[robSlot].hasValue = true;
@@ -95,16 +96,21 @@ public class ReorderBuffer {
 		for(int i = 0; i < indexCommitQueue.size(); i++) {
 			int current = indexCommitQueue.get(i);
 			ROBEntry entry = entryCommitQueue.get(i);
+                        if(entry.inst.op.startsWith("B"))
+                            branchCommits += 1;
 			commit(current, entry);
+                        
 		}
 		indexCommitQueue.clear();
 		entryCommitQueue.clear();
 		
 		writtenThisCycle = 0;
+                return branchCommits;
     }
     
-	public void stageCommits() { // To be called as a second "cycle()" method, after execution stations finish
-		int current = head;
+	public int stageCommits() { // To be called as a second "cycle()" method, after execution stations finish
+            int properCommits = 0;
+            int current = head;
         ROBEntry entry = ROB[current];
 		// Find the oldest instruction
         while(current != previous() && entry == null) {
@@ -122,6 +128,7 @@ public class ReorderBuffer {
                 indexCommitQueue.add(current);
                 entryCommitQueue.add(entry);
                 writtenThisCycle++;
+                properCommits += 1;
                 //System.out.println("Staged for commit: ");
                 //System.out.println(entry.inst);
             } else { // Flush
@@ -137,6 +144,7 @@ public class ReorderBuffer {
             current = next(current);
             entry = ROB[current];
         }
+        return properCommits;
 	}
 	
     private void commit(int robSlot, ROBEntry entry) {

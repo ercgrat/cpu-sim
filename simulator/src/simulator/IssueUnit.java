@@ -23,7 +23,8 @@ public class IssueUnit {
         this.scoreboard = scoreboard;
     }
     
-    public void cycle(){
+    public int cycle(){
+        int numStalls = 0;
         for(int i=0;i<NW;i++){
             Instruction nextInst = decodeUnit.peek();
             if(nextInst==null)
@@ -39,9 +40,15 @@ public class IssueUnit {
                     decodeUnit.dequeue();
                     //System.out.println("Issued: " + nextInst);
                 }
-                else
+                else{
+                    if(stNum == -1)
+                        numStalls = 1;
+                    else
+                        numStalls = 2;
                     break;
+                }
             }
         }
+        return numStalls;
     }
 }
