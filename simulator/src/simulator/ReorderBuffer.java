@@ -252,6 +252,18 @@ public class ReorderBuffer {
         return false;
     }
     
+    public boolean allFlush() {
+        int current = previous();
+        ROBEntry entry = ROB[current];
+        while(current != head && entry != null) {
+            if(!entry.flushFlag) 
+                return false;
+            current = previous(current);
+            entry = ROB[current];
+        }
+        return true;
+    }
+    
     public boolean isSetToBeFlushed(Instruction i) {
         //System.out.println("ROB entry is:"+ROB[i.robSlot]);
         return ROB[i.robSlot].flushFlag;

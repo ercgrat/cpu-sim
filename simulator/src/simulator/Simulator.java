@@ -85,7 +85,7 @@ public class Simulator {
         BranchUnit branchUnit = new BranchUnit(reservationStations, reorderBuffer);
         Instruction branchInstruction = null;
         int cycles = 0;
-        int countdown = 50;
+        int countdown = 1;
         int robStalls = 0;
         int resStalls = 0;
         int stallType = 0;
@@ -144,11 +144,10 @@ public class Simulator {
                 readingInstructions = fetchUnit.cycle();
             }
             scoreboard.cycle();
-            if(readingInstructions) {
-                countdown--;
-                if(countdown == 0) {
+            if(readingInstructions && reorderBuffer.allFlush()) {
+                
                     break;
-                }
+            
             }
         }
         Float IPC = (float)numCommits/cycles;
