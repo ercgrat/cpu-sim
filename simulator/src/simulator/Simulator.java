@@ -29,7 +29,8 @@ public class Simulator {
 		Emulator emulator = new Emulator();
 		ArrayList<String> instructions = emulator.readInstructions(filename);
 		Map<Integer,Float> memory = emulator.readData(filename);
-        
+        /*for(Map.Entry entry: memory.entrySet())
+            System.out.println("Mem("+entry.getKey()+") = "+entry.getValue());*/
         RegisterFile<Integer> intRegisters = new RegisterFile<Integer>(0);
         RegisterFile<Float> floatRegisters = new RegisterFile<Float>((float)0);
         Scoreboard scoreboard = new Scoreboard(intRegisters, floatRegisters);
@@ -53,49 +54,48 @@ public class Simulator {
         boolean readingInstructions = true;
         while(true) {
             cycles++;
-            System.out.println("----------Cycle " + cycles + "----------");
-            System.out.println("Int registers: " + intRegisters);
-			System.out.println("Float registers: " + floatRegisters);
+            //System.out.println("----------Cycle " + cycles + "----------");
+            
             
             // writeback & commit
-            System.out.println("*****Writeback & Commit");
+            //System.out.println("*****Writeback & Commit");
             reorderBuffer.cycle();
             
             // execution
-            System.out.println("*****Execution INT");
+            //System.out.println("*****Execution INT");
             intUnits.cycle();
-            System.out.println("*****Execution FPU");
+            //System.out.println("*****Execution FPU");
             fpUnit.cycle();
-            System.out.println("*****Execution MULT");
+            //System.out.println("*****Execution MULT");
             multUnit.cycle();
-            System.out.println("*****Execution LOAD/STORE");
+            //System.out.println("*****Execution LOAD/STORE");
             lsUnit.cycle();
-            System.out.println("*****Execution BRANCH");
+            //System.out.println("*****Execution BRANCH");
             branchInstruction = branchUnit.cycle();
-            System.out.println("Branch outcome is:" + branchInstruction);
-            System.out.println("*****Stage Commits");
+            //System.out.println("Branch outcome is:" + branchInstruction);
+            //System.out.println("*****Stage Commits");
             reorderBuffer.stageCommits(); // necessary for prioritizing writeback from execution units
             if(branchInstruction != null){
-                System.out.println("*****Branch - flush pipeline");
+                //System.out.println("*****Branch - flush pipeline");
                 if(!reorderBuffer.isSetToBeFlushed(branchInstruction)) {
                     reorderBuffer.flush(branchInstruction);
                     decodeUnit.flush();
                     fetchUnit.flush(branchInstruction);
                 }
             }
-            System.out.println("*****Reservation Stations");
+            //System.out.println("*****Reservation Stations");
             reservationStations.cycle();
             // issue
-            System.out.println("*****Issue");
+            //System.out.println("*****Issue");
             if(branchInstruction == null){
                 issueUnit.cycle();
             
                 // decode
-                System.out.println("*****Decode");
+                //System.out.println("*****Decode");
                 decodeUnit.cycle();
             
                 // fetch
-                System.out.println("*****Fetch");
+                //System.out.println("*****Fetch");
                 readingInstructions = fetchUnit.cycle();
             }
             scoreboard.cycle();
@@ -106,5 +106,10 @@ public class Simulator {
                 }
             }
         }
+        System.out.println("Total number of cycles: " + cycles);
+        System.out.println("Int registers: " + intRegisters);
+	System.out.println("Float registers: " + floatRegisters);
+        for(Map.Entry entry: memory.entrySet())
+            System.out.println("Mem("+entry.getKey()+") = "+entry.getValue());
 	}
 }

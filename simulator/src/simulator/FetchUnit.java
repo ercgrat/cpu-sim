@@ -93,7 +93,7 @@ public class FetchUnit {
 			
 			if(branchTable.hasEntry(PCIndex)) {
 				boolean branchCondition = branchTable.branchCondition(PCIndex);
-                System.out.println("Fetched branch: " + inst + ";" + PCIndex + ";" + branchCondition);
+                //System.out.println("Fetched branch: " + inst + ";" + PCIndex + ";" + branchCondition);
 				instructionQueue.add(inst + ";" + PCIndex + ";" + branchCondition);
 				if(branchCondition == true) {
 					// Do branch stuff here
@@ -142,6 +142,6 @@ public class FetchUnit {
 		if(branch.branchCondition)
 			PC = targetAddress;
 		else
-			PC = (branch.instructionAddress + 1)*4 + baseAddr;
+			PC = (branch.instructionAddress)*4 + baseAddr;
 	}
 }

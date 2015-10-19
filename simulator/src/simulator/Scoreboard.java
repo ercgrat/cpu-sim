@@ -22,7 +22,7 @@ public class Scoreboard {
     }
     
     public void cycle(){
-        System.out.println(intRegisterNames[1]+" "+intRegisterNames[2]+" "+intRegisterNames[4]+" "+intRegisterNames[5]+" "+intRegisterNames[6]);
+        //System.out.println(intRegisterNames[1]+" "+intRegisterNames[2]+" "+intRegisterNames[4]+" "+intRegisterNames[5]+" "+intRegisterNames[6]);
     }
     
     public int getName(Instruction.Operand op) {

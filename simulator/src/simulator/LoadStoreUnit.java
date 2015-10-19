@@ -32,7 +32,7 @@ public class LoadStoreUnit {
     }
     
     public void cycle(){
-        System.out.println("Memory Instruction is:" +memoryInst);
+        //System.out.println("Memory Instruction is:" +memoryInst);
         memoryAccess();
         int stNum;
         if(LSU.curCycle == 0){
@@ -49,7 +49,7 @@ public class LoadStoreUnit {
             reservationStations.setInstructionMemoryAddress(LSU.instruction.stNum, LSU.instruction.memoryAddress);
             if("Store".equals(LSU.instruction.unit)){
                 if("S.D".equals(LSU.instruction.op)){
-                    System.out.println("LSU instruction is:" + LSU.instruction);
+                    //System.out.println("LSU instruction is:" + LSU.instruction);
                     reservationStations.setInstructionDest(LSU.instruction.stNum, LSU.instruction.dest.floatValue);
                     if(reorderBuffer.write(LSU.instruction.robSlot, LSU.instruction.dest.floatValue))
                         LSU.curCycle = 0;

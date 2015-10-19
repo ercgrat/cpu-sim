@@ -200,7 +200,7 @@ public class ReservationStations {
     
     
     public void finishedExecution(int stNum) {
-        System.out.println("Freed reservation station.");
+        //System.out.println("Freed reservation station.");
         Stations[stNum].isExecuting = false;
         Stations[stNum].finishedExec = true;
     }
@@ -221,20 +221,20 @@ public class ReservationStations {
                         // done waiting if both operands match the writeback slot
                         if(Stations[i].srcName == robSlot && Stations[i].targetName == robSlot) {
                             Stations[i].isWaiting = false;
-                            System.out.println("Stations "+i+" is not waiting");
+                            //System.out.println("Stations "+i+" is not waiting");
                         }
                     } else { // just source is waiting
                         if(Stations[i].srcName == robSlot) { // source matches the writeback slot, done waiting
                             Stations[i].instruction.src.intValue = val;
                             Stations[i].isWaiting = false;
-                            System.out.println("Stations "+i+" is not waiting");
+                            //System.out.println("Stations "+i+" is not waiting");
                         }
                     }
                 } else if(Stations[i].destName < 0){ // just target is waiting
                     if(Stations[i].targetName == robSlot) { // target matches the writeback slot, done waiting
                         Stations[i].instruction.target.intValue = val;
                         Stations[i].isWaiting = false;
-                        System.out.println("Stations "+i+" is not waiting");
+                        //System.out.println("Stations "+i+" is not waiting");
                     }
                 } else if(Stations[i].srcName >= 0  && Stations[i].destName >= 0){
                     if(Stations[i].srcName == robSlot) { // if source matches writeback slot, read value
@@ -248,13 +248,13 @@ public class ReservationStations {
                     // done waiting if both operands match the writeback slot
                     if(Stations[i].srcName == robSlot && Stations[i].destName == robSlot) {
                         Stations[i].isWaiting = false;
-                        System.out.println("Stations "+i+" is not waiting");
+                        //System.out.println("Stations "+i+" is not waiting");
                     }
                 } else{
                     if(Stations[i].destName == robSlot) { // Dest matches the writeback slot, done waiting
                         Stations[i].instruction.dest.intValue = val;
                         Stations[i].isWaiting = false;
-                        System.out.println("Stations "+i+" is not waiting");
+                        //System.out.println("Stations "+i+" is not waiting");
                     }
                 }
             }
@@ -277,20 +277,20 @@ public class ReservationStations {
                         // done waiting if both operands match the writeback slot
                         if(Stations[i].srcName == robSlot && Stations[i].targetName == robSlot) {
                             Stations[i].isWaiting = false;
-                            System.out.println("Stations "+i+" is not waiting");
+                            //System.out.println("Stations "+i+" is not waiting");
                         }
                     } else { // just source is waiting
                         if(Stations[i].srcName == robSlot) { // source matches the writeback slot, done waiting
                             Stations[i].instruction.src.floatValue = val;
                             Stations[i].isWaiting = false;
-                            System.out.println("Stations "+i+" is not waiting");
+                            //System.out.println("Stations "+i+" is not waiting");
                         }
                     }
                 } else if(Stations[i].destName < 0){ // just target is waiting
                     if(Stations[i].targetName == robSlot) { // target matches the writeback slot, done waiting
                         Stations[i].instruction.target.floatValue = val;
                         Stations[i].isWaiting = false;
-                        System.out.println("Stations "+i+" is not waiting");
+                       // System.out.println("Stations "+i+" is not waiting");
                     }
                 } else if(Stations[i].srcName >= 0  && Stations[i].destName >= 0){
                     if(Stations[i].srcName == robSlot) { // if source matches writeback slot, read value
@@ -304,13 +304,13 @@ public class ReservationStations {
                     // done waiting if both operands match the writeback slot
                     if(Stations[i].srcName == robSlot && Stations[i].destName == robSlot) {
                         Stations[i].isWaiting = false;
-                        System.out.println("Stations "+i+" is not waiting");
+                        //System.out.println("Stations "+i+" is not waiting");
                     }
                 } else{
                     if(Stations[i].destName == robSlot) { // Dest matches the writeback slot, done waiting
                         Stations[i].instruction.dest.floatValue = val;
                         Stations[i].isWaiting = false;
-                        System.out.println("Stations "+i+" is not waiting");
+                        //System.out.println("Stations "+i+" is not waiting");
                     }
                 }
             }
@@ -345,6 +345,7 @@ public class ReservationStations {
     }
     
     public float getFloatValue(int stNum){
+        //System.out.println("Returning value from instruction:"+Stations[stNum].instruction);
         return Stations[stNum].instruction.dest.floatValue;
     }
     
@@ -381,7 +382,7 @@ public class ReservationStations {
             Stations[i].destName = scoreboard.getName(instruction.dest);
             if(Stations[i].destName != -1){
                 Stations[i].isWaiting = true;
-                System.out.println("Station "+i+" is waiting");
+                //System.out.println("Station "+i+" is waiting");
             }
         }
             
@@ -389,10 +390,10 @@ public class ReservationStations {
         Stations[i].targetName = scoreboard.getName(instruction.target);
         if(Stations[i].srcName != -1 || Stations[i].targetName != -1) {
             Stations[i].isWaiting = true;
-            System.out.println("Station "+i+" is waiting");
+            //System.out.println("Station "+i+" is waiting");
         }
-        System.out.println("Station "+i+" reserved by instruction:"+instruction);
-        System.out.println("Station "+i+" status is: srcName:"+Stations[i].srcName+",destName:"+Stations[i].destName+",targetName:"+Stations[i].targetName);
+        //System.out.println("Station "+i+" reserved by instruction:"+instruction);
+        //System.out.println("Station "+i+" status is: srcName:"+Stations[i].srcName+",destName:"+Stations[i].destName+",targetName:"+Stations[i].targetName);
     }
     
 }
