@@ -22,7 +22,7 @@ public class ReorderBuffer {
         }
     }
     
-    private int NR, NC, head, writtenThisCycle;
+    private int NR, NB, NC, head, writtenThisCycle, committedThisCycle;
     private ROBEntry[] ROB;
     private RegisterFile<Integer> intRegisters;
     private RegisterFile<Float> floatRegisters;
@@ -36,8 +36,9 @@ public class ReorderBuffer {
 	private ArrayList<ROBEntry> entryCommitQueue;
     private Map<Integer, Float> memory;
 	
-    public ReorderBuffer(int NR, int NC,  RegisterFile<Integer> intRegisters,  RegisterFile<Float> floatRegisters, ReservationStations resStations, Scoreboard scoreboard, Map<Integer, Float> memory){
+    public ReorderBuffer(int NR, int NB, int NC,  RegisterFile<Integer> intRegisters,  RegisterFile<Float> floatRegisters, ReservationStations resStations, Scoreboard scoreboard, Map<Integer, Float> memory){
         this.NR = NR;
+        this.NB = NB;
         this.NC = NC;
         this.intRegisters = intRegisters;
         this.floatRegisters = floatRegisters;
@@ -48,6 +49,7 @@ public class ReorderBuffer {
         ROB = new ROBEntry[NR];
 		
 		writtenThisCycle = 0;
+        committedThisCycle = 0;
 		intIndexWriteQueue = new ArrayList<Integer>();
 		floatIndexWriteQueue = new ArrayList<Integer>();
 		intValueWriteQueue = new ArrayList<Integer>();
@@ -69,7 +71,6 @@ public class ReorderBuffer {
                     ROB[robSlot].intValue = 0; // prevent null values even for meaningless flushed instructions
                 }
                 resStations.writeback(robSlot, ROB[robSlot].intValue);
-                writtenThisCycle++;
             }
 		}
 		intIndexWriteQueue.clear();
@@ -85,7 +86,6 @@ public class ReorderBuffer {
                     ROB[robSlot].floatValue = (float)0; // prevent null values even for meaningless flushed instructions
                 }
                 resStations.writeback(robSlot, ROB[robSlot].floatValue);
-                writtenThisCycle++;
             }
 		}
         floatIndexWriteQueue.clear();
@@ -96,8 +96,9 @@ public class ReorderBuffer {
 		for(int i = 0; i < indexCommitQueue.size(); i++) {
 			int current = indexCommitQueue.get(i);
 			ROBEntry entry = entryCommitQueue.get(i);
-                        if(entry.inst.op.startsWith("B"))
-                            branchCommits += 1;
+            if(entry.inst.op.startsWith("B")) {
+                branchCommits += 1;
+            }
 			commit(current, entry);
                         
 		}
@@ -105,12 +106,14 @@ public class ReorderBuffer {
 		entryCommitQueue.clear();
 		
 		writtenThisCycle = 0;
-                return branchCommits;
+        committedThisCycle = 0;
+        
+        return branchCommits;
     }
     
 	public int stageCommits() { // To be called as a second "cycle()" method, after execution stations finish
-            int properCommits = 0;
-            int current = head;
+        int properCommits = 0;
+        int current = head;
         ROBEntry entry = ROB[current];
 		// Find the oldest instruction
         while(current != previous() && entry == null) {
@@ -123,11 +126,11 @@ public class ReorderBuffer {
             //System.out.println("Flush flag is: " + entry.flushFlag);
         }
 		// Commit in order from oldest instructions, if values are ready, while bandwidth available on the CDB
-        while(entry != null && entry.hasValue && writtenThisCycle < NC) {
+        while(entry != null && entry.hasValue && committedThisCycle < NC) {
             if(entry.flushFlag == false) { // Not marked for flushing
                 indexCommitQueue.add(current);
                 entryCommitQueue.add(entry);
-                writtenThisCycle++;
+                committedThisCycle++;
                 properCommits += 1;
                 //System.out.println("Staged for commit: ");
                 //System.out.println(entry.inst);
@@ -206,11 +209,8 @@ public class ReorderBuffer {
     public boolean write(int index, Integer val) {
         //System.out.println("Staged writeback of " + val + " to ROB slot " + index + ".");
         //System.out.println(ROB[index].inst);
-		/*if(val == null) {
-			return true;
-		}*/
 		
-        if(writtenThisCycle < NC && index >= 0 && index < NR) {
+        if(writtenThisCycle < NB && index >= 0 && index < NR) {
 			intIndexWriteQueue.add(index);
 			intValueWriteQueue.add(val);
 			writtenThisCycle++;
@@ -223,11 +223,8 @@ public class ReorderBuffer {
     public boolean write(int index, Float val) {
         //System.out.println("Staged writeback of " + val + " to ROB slot " + index + ".");
         //System.out.println(ROB[index].inst);
-		/*if(val == null) {
-			return true;
-		}*/
 		
-        if(writtenThisCycle < NC && index >= 0 && index < NR) {
+        if(writtenThisCycle < NB && index >= 0 && index < NR) {
 			floatIndexWriteQueue.add(index);
 			floatValueWriteQueue.add(val);
 			writtenThisCycle++;

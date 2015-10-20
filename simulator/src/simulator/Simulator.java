@@ -74,7 +74,7 @@ public class Simulator {
         DecodeUnit decodeUnit = new DecodeUnit(ND, NI, fetchUnit);
         
         ReservationStations reservationStations = new ReservationStations(scoreboard);
-        ReorderBuffer reorderBuffer = new ReorderBuffer(NR, NC, intRegisters, floatRegisters, reservationStations, scoreboard, memory);
+        ReorderBuffer reorderBuffer = new ReorderBuffer(NR, NB, NC, intRegisters, floatRegisters, reservationStations, scoreboard, memory);
         reservationStations.reorderBufferInit(reorderBuffer);
         IssueUnit issueUnit = new IssueUnit(NW, decodeUnit, reservationStations, reorderBuffer, scoreboard);
         
