@@ -138,6 +138,12 @@ public class FetchUnit {
 		return dequeuedInstructions;
 	}
 	
+        public boolean isFetchQEmpty(){
+            if(instructionQueue.size() > 0)
+                return false;
+            return true;
+        }
+        
 	public void flush(Instruction branch){
 		int targetAddress;
 		if(branch.target == null) {

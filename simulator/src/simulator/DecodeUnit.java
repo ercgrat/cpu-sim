@@ -35,6 +35,12 @@ public class DecodeUnit {
 			To be filled in when ROB and register files exist.
 		***/
 	}
+        
+        public boolean isIssueQEmpty(){
+            if(issueQueue.size() > 0)
+                return false;
+            return true;
+        }
 	
 	public Instruction peek() {
 		if(issueQueue.size() > 0) {

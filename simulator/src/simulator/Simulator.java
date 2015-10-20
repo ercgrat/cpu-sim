@@ -144,7 +144,7 @@ public class Simulator {
                 readingInstructions = fetchUnit.cycle();
             }
             scoreboard.cycle();
-            if(readingInstructions && reorderBuffer.allFlush()) {
+            if(readingInstructions && reorderBuffer.allFlush() && fetchUnit.isFetchQEmpty() && decodeUnit.isIssueQEmpty()) {
                 
                     break;
             
